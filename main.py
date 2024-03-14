@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 
 def send(msg_type: str, msg: str, to: int):
+    print('in send function...')
     endpoint = 'https://foresthut.pythonanywhere.com/messages/message'
 
     input_params = {
@@ -23,8 +24,10 @@ def send(msg_type: str, msg: str, to: int):
         'api-key': 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'
     }
 
+    print('making request...')
     response = requests.post(url=endpoint, json=input_params, headers=header).json()
     print(response)
+    print('done with sending...')
 
 
 @app.route('/notify-wh', methods=['POST'])
@@ -32,6 +35,7 @@ def notify():
     content = request.json
     print(content)
     # TODO: do process the message
+    print('calling send...')
     send('TEXT', 'Hello', 1)
     return str(http.HTTPStatus.OK.value)
 
