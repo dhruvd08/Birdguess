@@ -32,6 +32,7 @@ def notify():
     content = request.json
     print(content)
     # TODO: do process the message
+    send('TEXT', 'Hello', 1)
     return str(http.HTTPStatus.OK.value)
 
 
