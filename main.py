@@ -35,7 +35,7 @@ def notify():
     content = request.json
     print(content)
     print('calling send...')
-    send('TEXT', 'Hello', 1)
+    send('TEXT', f'Hello {content["player_name"]}! We will be live soon!', content['player_id'])
     return str(http.HTTPStatus.OK.value)
 
 
