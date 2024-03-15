@@ -1,4 +1,4 @@
-birds = {
+species = {
     'black winged kite': {
         'countries': ['IN'],
         'img': 'images/black-winged-kite.jpg'
