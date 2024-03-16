@@ -45,9 +45,9 @@ def notify():
             == 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'):
         if content['msg_body'] == 'bg':
             location_vise_species = []
-            for key in species.keys():
-                if content['player_country_code'] in species[key]['countries']:
-                    location_vise_species.append(key)
+            for sp in species.keys():
+                if content['player_country_code'] in species[sp]['countries']:
+                    location_vise_species.append(sp)
 
             chosen_species: str = random.choice(location_vise_species)
             letters = [letter.upper() for letter in chosen_species]
