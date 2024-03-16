@@ -80,12 +80,14 @@ def notify():
                 send('TEXT', f'You have already placed that alphabet.', content['player_id'])
                 return str(http.HTTPStatus.OK.value)
             elif entered_alphabet in current_game['species']:
+                print(f'{entered_alphabet} is present in the')
                 indexs = []
                 for i, let in enumerate(current_game['species']):
                     if let == entered_alphabet:
                         indexs.append(i)
                 for ind in indexs:
                     current_game['letters'][ind] = entered_alphabet.upper()
+                send('TEXT', ''.join(current_game['letters']), content['player_id'])
             else:
                 send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
                 lives -= 1
@@ -98,6 +100,7 @@ def notify():
                     'letters': current_game['letters']
                 }
                 json.dump(obj=new_game, fp=f)
+            return str(http.HTTPStatus.OK.value)
         else:
             send('TEXT', f'"{content["msg_body"]}" is not in the alphabetic order.', content['player_id'])
         return str(http.HTTPStatus.OK.value)
