@@ -63,8 +63,10 @@ def notify():
                 }
                 json.dump(obj=new_game, fp=f)
             send('TEXT', ''.join(letters), content['player_id'])
-        elif content['msg_body'] in [alphabet.upper() for alphabet in alphabets]:
+        elif content['msg_body'].upper() in [alphabet.upper() for alphabet in alphabets]:
             send('TEXT', f'Hello {content["player_name"]}! We will be live soon!', content['player_id'])
+        else:
+            send('TEXT', f'"{content["msg_body"]}" is not in the alphabetic order.', content['player_id'])
         return str(http.HTTPStatus.OK.value)
     else:
         return str(http.HTTPStatus.BAD_REQUEST.value)
