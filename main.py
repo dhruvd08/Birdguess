@@ -7,6 +7,10 @@ from data import species
 from flask import Flask, request
 
 app = Flask(__name__)
+alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+             'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+             'y', 'z']
 
 
 def send(msg_type: str, msg: str, to: int):
@@ -59,7 +63,7 @@ def notify():
                 }
                 json.dump(obj=new_game, fp=f)
             send('TEXT', ''.join(letters), content['player_id'])
-        else:
+        elif content['msg_body'] in [alphabet.upper() for alphabet in alphabets]:
             send('TEXT', f'Hello {content["player_name"]}! We will be live soon!', content['player_id'])
         return str(http.HTTPStatus.OK.value)
     else:
