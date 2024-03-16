@@ -51,7 +51,7 @@ def notify():
 
             chosen_species: str = random.choice(location_vise_species)
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
-            game_id = time.time()
+            game_id = int(time.time())
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}', mode='w') as f:
                 f.write(f'{game_id}')
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
