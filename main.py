@@ -46,7 +46,7 @@ def notify():
         if content['msg_body'] == 'bg':
             location_vise_species = []
             for key in species.keys():
-                if species[key]['countries'] == content['player_country_code']:
+                if content['player_country_code'] in species[key]['countries']:
                     location_vise_species.append(key)
 
             chosen_species: str = random.choice(location_vise_species)
