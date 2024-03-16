@@ -66,12 +66,17 @@ def notify():
             send('TEXT', ''.join(letters), content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets]:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
+                print(f'received player_id: {content["player_id"]}')
                 game_id = f.read()
+                print(f'read game_id from file: {game_id}')
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
                 current_game = json.load(fp=f)
+                print(f'current game data: {current_game}')
             entered_alphabet: str = content['msg_body'].lower()
+            print(f'entered alphabet: {entered_alphabet}')
             lives = current_game['lives']
             if entered_alphabet.upper() in current_game['letters']:
+                print(f'{entered_alphabet} was already in letters')
                 send('TEXT', f'You have already placed that alphabet.', content['player_id'])
                 return str(http.HTTPStatus.OK.value)
             elif entered_alphabet in current_game['species']:
