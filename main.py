@@ -45,18 +45,25 @@ def notify():
                 if species[key]['countries'] == content['player_country_code']:
                     location_vise_species.append(key)
 
-            chosen_species = random.choice(location_vise_species)
+            chosen_species: str = random.choice(location_vise_species)
+            letters = [letter.upper() for letter in chosen_species]
             game_id = time.time()
             with open(f'data/{content["player_id"]}', mode='w') as f:
                 f.write(f'{game_id}')
             with open(f'player_data/{game_id}.json', mode='w') as f:
                 new_game = {
                     'game_id': game_id,
-                    'species': chosen_species
+                    'species': chosen_species,
+                    'status': 'new',
+                    'letters': letters
                 }
-
-    send('TEXT', f'Hello {content["player_name"]}! We will be live soon!', content['player_id'])
-    return str(http.HTTPStatus.OK.value)
+                json.dump(obj=new_game, fp=f)
+            send('TEXT', ''.join(letters), content['player_id'])
+        else:
+            send('TEXT', f'Hello {content["player_name"]}! We will be live soon!', content['player_id'])
+        return str(http.HTTPStatus.OK.value)
+    else:
+        return str(http.HTTPStatus.BAD_REQUEST.value)
 
 
 if __name__ == '__main__':
