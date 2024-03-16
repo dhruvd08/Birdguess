@@ -72,5 +72,10 @@ def notify():
         return str(http.HTTPStatus.BAD_REQUEST.value)
 
 
+@app.route('/')
+def hello():
+    return 'hello'
+
+
 if __name__ == '__main__':
     app.run()
