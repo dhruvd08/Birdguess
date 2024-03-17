@@ -72,30 +72,43 @@ def notify():
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
                 current_game = json.load(fp=f)
                 print(f'current game data: {current_game}')
-            entered_alphabet: str = content['msg_body'].lower()
-            print(f'entered alphabet: {entered_alphabet}')
-            lives = current_game['lives']
-            if entered_alphabet.upper() in current_game['letters']:
-                print(f'{entered_alphabet} was already in letters')
-                send('TEXT', f'You have already placed that alphabet.', content['player_id'])
+            status: str = current_game['status']
+            lives: int = current_game['lives']
+            if status == 'in_progress':
+                entered_alphabet: str = content['msg_body'].lower()
+                print(f'entered alphabet: {entered_alphabet}')
+                if entered_alphabet.upper() in current_game['letters']:
+                    print(f'{entered_alphabet} was already in letters')
+                    send('TEXT', f'You have already placed that alphabet.', content['player_id'])
+                    return str(http.HTTPStatus.OK.value)
+                elif entered_alphabet in current_game['species']:
+                    print(f'{entered_alphabet} is present in the')
+                    indexs = []
+                    for i, let in enumerate(current_game['species']):
+                        if let == entered_alphabet:
+                            indexs.append(i)
+                    for ind in indexs:
+                        current_game['letters'][ind] = entered_alphabet.upper()
+                    send('TEXT', ' '.join(current_game['letters']), content['player_id'])
+                    if '_' not in current_game['letters']:
+                        status = 'over'
+                        send('TEXT', 'You win!!', content['player_id'])
+                        return str(http.HTTPStatus.OK.value)
+                else:
+                    send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
+                    lives -= 1
+                    if lives == 0:
+                        status = 'over'
+                        send('TEXT', 'You have no lives left. Game over.', content['player_id'])
+                        return str(http.HTTPStatus.OK.value)
+            if status == 'over':
+                send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
                 return str(http.HTTPStatus.OK.value)
-            elif entered_alphabet in current_game['species']:
-                print(f'{entered_alphabet} is present in the')
-                indexs = []
-                for i, let in enumerate(current_game['species']):
-                    if let == entered_alphabet:
-                        indexs.append(i)
-                for ind in indexs:
-                    current_game['letters'][ind] = entered_alphabet.upper()
-                send('TEXT', ' '.join(current_game['letters']), content['player_id'])
-            else:
-                send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
-                lives -= 1
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
                 new_game = {
                     'game_id': game_id,
                     'species': current_game['species'],
-                    'status': 'in_progress',
+                    'status': status,
                     'lives': lives,
                     'letters': current_game['letters']
                 }

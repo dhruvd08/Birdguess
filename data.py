@@ -22,5 +22,15 @@ species = {
     'orange minivet': {
         'countries': ['IN'],
         'img': 'images/orange-minivet.jpg'
+    },
+
+    'indian golden oriole': {
+        'countries': ['IN'],
+        'img': 'images/indian-golden-oriole.jpg'
+    },
+
+    'oriental magpie robin': {
+        'countries': ['IN'],
+        'img': 'images/oriental-magpie-robin.jpg'
     }
 }
