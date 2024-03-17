@@ -110,7 +110,7 @@ def notify():
                     send('TEXT', ' '.join(current_game['letters']), content['player_id'])
                     if '_' not in current_game['letters']:
                         status = 'over'
-                        send('TEXT', 'You win!!', content['player_id'])
+                        send('TEXT', 'You got it right!!', content['player_id'])
                 else:
                     send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
                     lives -= 1
