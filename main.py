@@ -33,17 +33,11 @@ def send(msg_type: str, msg: str, to: int):
 
 @app.route('/notify-wh', methods=['POST'])
 def notify():
-    """
-    input_params{'msg_body': 'ttt', 'player_id': 4, 'player_name': 'Simba', 'msg_id': 1710389065,
-    'player_country_code': 'IN'}
-    header{'webhook-key': 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'}
-    """
     content = request.json
     print(content)
 
     if (request.headers.get('webhook-key')
             == 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'):
-        cont = False
         try:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
                 game_id = f.read()
@@ -52,6 +46,7 @@ def notify():
         except FileNotFoundError:
             cont = True
         else:
+            cont = False
             if current_game['status'] == 'over' and content['msg_body'].lower() != 'bg':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
                 with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
@@ -113,7 +108,8 @@ def notify():
                         send('TEXT', 'You got it right!!', content['player_id'])
                 else:
                     lives -= 1
-                    send('TEXT', f'That\'s wrong, you lost a chance. Now you have {lives}/6 chances left. ', content['player_id'])
+                    send('TEXT', f'That\'s wrong, you lost a chance. '
+                                 f'Now you have {lives}/6 chances left. ', content['player_id'])
                     if lives == 0:
                         status = 'over'
                         send('TEXT', 'You have no chances left. Game over.', content['player_id'])
