@@ -112,8 +112,8 @@ def notify():
                         status = 'over'
                         send('TEXT', 'You got it right!!', content['player_id'])
                 else:
-                    send('TEXT', f'That\'s wrong, you lost a chance. Now you have {lives}/6 chances left. ', content['player_id'])
                     lives -= 1
+                    send('TEXT', f'That\'s wrong, you lost a chance. Now you have {lives}/6 chances left. ', content['player_id'])
                     if lives == 0:
                         status = 'over'
                         send('TEXT', 'You have no chances left. Game over.', content['player_id'])
