@@ -99,9 +99,8 @@ def notify():
                     if lives == 0:
                         status = 'over'
                         send('TEXT', 'You have no lives left. Game over.', content['player_id'])
-            if status == 'over':
+            elif status == 'over':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
-                return str(http.HTTPStatus.OK.value)
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
                 new_game = {
                     'game_id': game_id,
