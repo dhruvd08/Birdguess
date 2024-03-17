@@ -37,7 +37,7 @@ def notify():
     input_params{'msg_body': 'ttt', 'player_id': 4, 'player_name': 'Simba', 'msg_id': 1710389065,
     'player_country_code': 'IN'}
     header{'webhook-key': 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'}
-     """
+    """
     content = request.json
     print(content)
 
