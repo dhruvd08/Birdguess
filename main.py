@@ -43,7 +43,28 @@ def notify():
 
     if (request.headers.get('webhook-key')
             == 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'):
-        if content['msg_body'] == 'bg':
+        cont = False
+        try:
+            with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
+                game_id = f.read()
+            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
+                current_game = json.load(fp=f)
+        except FileNotFoundError:
+            cont = True
+        else:
+            if current_game['status'] == 'over':
+                send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
+            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
+                new_game = {
+                    'game_id': game_id,
+                    'species': current_game['species'],
+                    'status': current_game['status'],
+                    'lives': current_game['lives'],
+                    'letters': current_game['letters']
+                }
+                json.dump(obj=new_game, fp=f)
+            return str(http.HTTPStatus.OK.value)
+        if content['msg_body'] == 'bg' and cont:
             location_vise_species = []
             for sp in species.keys():
                 if content['player_country_code'] in species[sp]['countries']:
@@ -64,25 +85,19 @@ def notify():
                 }
                 json.dump(obj=new_game, fp=f)
             send('TEXT', ' '.join(letters), content['player_id'])
-        elif content['msg_body'].lower() in [alphabet for alphabet in alphabets]:
+        elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
-                print(f'received player_id: {content["player_id"]}')
                 game_id = f.read()
-                print(f'read game_id from file: {game_id}')
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
                 current_game = json.load(fp=f)
-                print(f'current game data: {current_game}')
             status: str = current_game['status']
             lives: int = current_game['lives']
             if status == 'in_progress':
                 entered_alphabet: str = content['msg_body'].lower()
-                print(f'entered alphabet: {entered_alphabet}')
                 if entered_alphabet.upper() in current_game['letters']:
-                    print(f'{entered_alphabet} was already in letters')
                     send('TEXT', f'You have already placed that alphabet.', content['player_id'])
                     return str(http.HTTPStatus.OK.value)
                 elif entered_alphabet in current_game['species']:
-                    print(f'{entered_alphabet} is present in the')
                     indexs = []
                     for i, let in enumerate(current_game['species']):
                         if let == entered_alphabet:
@@ -111,16 +126,11 @@ def notify():
                 }
                 json.dump(obj=new_game, fp=f)
             return str(http.HTTPStatus.OK.value)
-        else:
+        elif cont:
             send('TEXT', f'"{content["msg_body"]}" is not in the alphabetic order.', content['player_id'])
         return str(http.HTTPStatus.OK.value)
     else:
         return str(http.HTTPStatus.BAD_REQUEST.value)
-
-
-@app.route('/')
-def hello():
-    return 'hello world'
 
 
 if __name__ == '__main__':
