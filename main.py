@@ -52,18 +52,21 @@ def notify():
         except FileNotFoundError:
             cont = True
         else:
-            if current_game['status'] == 'over':
+            if current_game['status'] == 'over' and content['msg_body'].lower() != 'bg':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
-            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
-                new_game = {
-                    'game_id': game_id,
-                    'species': current_game['species'],
-                    'status': current_game['status'],
-                    'lives': current_game['lives'],
-                    'letters': current_game['letters']
-                }
-                json.dump(obj=new_game, fp=f)
-            return str(http.HTTPStatus.OK.value)
+                with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
+                    new_game = {
+                        'game_id': game_id,
+                        'species': current_game['species'],
+                        'status': current_game['status'],
+                        'lives': current_game['lives'],
+                        'letters': current_game['letters']
+                    }
+                    json.dump(obj=new_game, fp=f)
+                    return str(http.HTTPStatus.OK.value)
+            else:
+                cont = True
+
         if content['msg_body'] == 'bg' and cont:
             location_vise_species = []
             for sp in species.keys():
