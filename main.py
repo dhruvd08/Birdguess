@@ -93,14 +93,12 @@ def notify():
                     if '_' not in current_game['letters']:
                         status = 'over'
                         send('TEXT', 'You win!!', content['player_id'])
-                        return str(http.HTTPStatus.OK.value)
                 else:
                     send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
                     lives -= 1
                     if lives == 0:
                         status = 'over'
                         send('TEXT', 'You have no lives left. Game over.', content['player_id'])
-                        return str(http.HTTPStatus.OK.value)
             if status == 'over':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
                 return str(http.HTTPStatus.OK.value)
