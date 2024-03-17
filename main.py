@@ -38,6 +38,7 @@ def notify():
 
     if (request.headers.get('webhook-key')
             == 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'):
+        print('checking if game is over')
         try:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
                 game_id = f.read()
@@ -48,6 +49,7 @@ def notify():
         else:
             cont = False
             if current_game['status'] == 'over' and content['msg_body'].lower() != 'bg':
+                print('game is over and player did not send "bg"')
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
                 with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
                     new_game = {
@@ -63,12 +65,14 @@ def notify():
                 cont = True
 
         if content['msg_body'] == 'bg' and cont:
+            print('player sent "bg"')
             location_vise_species = []
             for sp in species.keys():
                 if content['player_country_code'] in species[sp]['countries']:
                     location_vise_species.append(sp)
 
             chosen_species: str = random.choice(location_vise_species)
+            print('decided species')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}', mode='w') as f:
