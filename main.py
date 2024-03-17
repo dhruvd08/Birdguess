@@ -63,7 +63,7 @@ def notify():
                     'letters': letters
                 }
                 json.dump(obj=new_game, fp=f)
-            send('TEXT', ''.join(letters), content['player_id'])
+            send('TEXT', ' '.join(letters), content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets]:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
                 print(f'received player_id: {content["player_id"]}')
@@ -87,7 +87,7 @@ def notify():
                         indexs.append(i)
                 for ind in indexs:
                     current_game['letters'][ind] = entered_alphabet.upper()
-                send('TEXT', ''.join(current_game['letters']), content['player_id'])
+                send('TEXT', ' '.join(current_game['letters']), content['player_id'])
             else:
                 send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
                 lives -= 1
