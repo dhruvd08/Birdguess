@@ -86,6 +86,7 @@ def notify():
                     'letters': letters
                 }
                 json.dump(obj=new_game, fp=f)
+            print('made game_id and game')
             send('TEXT', ' '.join(letters), content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
