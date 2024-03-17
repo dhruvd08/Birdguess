@@ -112,11 +112,11 @@ def notify():
                         status = 'over'
                         send('TEXT', 'You got it right!!', content['player_id'])
                 else:
-                    send('TEXT', 'That\'s wrong, you lose a life.', content['player_id'])
+                    send('TEXT', f'That\'s wrong, you lost a chance. Now you have {lives}/6 chances left. ', content['player_id'])
                     lives -= 1
                     if lives == 0:
                         status = 'over'
-                        send('TEXT', 'You have no lives left. Game over.', content['player_id'])
+                        send('TEXT', 'You have no chances left. Game over.', content['player_id'])
             elif status == 'over':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
