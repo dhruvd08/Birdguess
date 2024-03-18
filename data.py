@@ -802,5 +802,15 @@ species = {
     'legges hawk eagle': {
         'countries': ['IN'],
         'img': 'images/imperial-eagle.jpg'
+    },
+
+    'great indian bustard': {
+        'countries': ['IN'],
+        'img': 'images/great-indian-bustard.jpg'
+    },
+
+    'lesser florican': {
+        'countries': ['IN'],
+        'img': 'images/lesser-florican.jpg'
     }
 }
