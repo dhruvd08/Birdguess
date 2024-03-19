@@ -812,5 +812,345 @@ species = {
     'lesser florican': {
         'countries': ['IN'],
         'img': 'images/lesser-florican.jpg'
+    },
+
+    'slaty legged crake': {
+        'countries': ['IN'],
+        'img': 'images/slaty-legged-crake.jpg'
+    },
+
+    'slaty breasted crake': {
+        'countries': ['IN'],
+        'img': 'images/slaty-breasted-crake.jpg'
+    },
+
+    'baillons crake': {
+        'countries': ['IN'],
+        'img': 'images/baillons-crake.jpg'
+    },
+
+    'brown crake': {
+        'countries': ['IN'],
+        'img': 'images/brown-crake.jpg'
+    },
+
+    'spotted crake': {
+        'countries': ['IN'],
+        'img': 'images/spotted-crake.jpg'
+    },
+
+    'ruddy breasted crake': {
+        'countries': ['IN'],
+        'img': 'images/ruddy-breasted-crake.jpg'
+    },
+
+    'watercock': {
+        'countries': ['IN'],
+        'img': 'images/watercock.jpg'
+    },
+
+    'common coot': {
+        'countries': ['IN'],
+        'img': 'images/common-coot.jpg'
+    },
+
+    'common moorhen': {
+        'countries': ['IN'],
+        'img': 'images/common-moorhen.jpg'
+    },
+
+    'grey headed swamphen': {
+        'countries': ['IN'],
+        'img': 'images/grey-headed-swamphen.jpg'
+    },
+
+    'small buttonquail': {
+        'countries': ['IN'],
+        'img': 'images/small-buttonquail.jpg'
+    },
+
+    'yellow legged buttonquail': {
+        'countries': ['IN'],
+        'img': 'images/yellow-legged-buttonquail.jpg'
+    },
+
+    'barred buttonquail': {
+        'countries': ['IN'],
+        'img': 'images/barred-buttonquail.jpg'
+    },
+
+    'demoiselle crane': {
+        'countries': ['IN'],
+        'img': 'images/demoiselle-crane.jpg'
+    },
+
+    'common crane': {
+        'countries': ['IN'],
+        'img': 'images/common-crane.jpg'
+    },
+
+    'indian thick knee': {
+        'countries': ['IN'],
+        'img': 'images/indian-thick-knee.jpg'
+    },
+
+    'great thick knee': {
+        'countries': ['IN'],
+        'img': 'images/great-thick-knee.jpg'
+    },
+
+    'pheasant tailed jacana': {
+        'countries': ['IN'],
+        'img': 'images/pheasant-tailed-jacana.jpg'
+    },
+
+    'bronze winged jacana': {
+        'countries': ['IN'],
+        'img': 'images/bronze-winged-jacana.jpg'
+    },
+
+    'eurasian oystercatcher': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-oystercatcher.jpg'
+    },
+
+    'pied avocet': {
+        'countries': ['IN'],
+        'img': 'images/pied-avocet.jpg'
+    },
+
+    'black winged stilt': {
+        'countries': ['IN'],
+        'img': 'images/black-winged-stilt.jpg'
+    },
+
+    'yellow wattled lapwing': {
+        'countries': ['IN'],
+        'img': 'images/yellow-wattled-lapwing.jpg'
+    },
+
+    'grey headed lapwing': {
+        'countries': ['IN'],
+        'img': 'images/grey-headed-lapwing.jpg'
+    },
+
+    'pacific golden plover': {
+        'countries': ['IN'],
+        'img': 'images/pacific-golden-plover.jpg'
+    },
+
+    'grey plover': {
+        'countries': ['IN'],
+        'img': 'images/grey-plover.jpg'
+    },
+
+    'crab plover': {
+        'countries': ['IN'],
+        'img': 'images/crab-plover.jpg'
+    },
+
+    'little ringed plover': {
+        'countries': ['IN'],
+        'img': 'images/little-ringed-plover.jpg'
+    },
+
+    'kentish plover': {
+        'countries': ['IN'],
+        'img': 'images/kentish-plover.jpg'
+    },
+
+    'greater sand plover': {
+        'countries': ['IN'],
+        'img': 'images/greater-sand-plover.jpg'
+    },
+
+    'lesser sand plover': {
+        'countries': ['IN'],
+        'img': 'images/lesser-sand-plover.jpg'
+    },
+
+    'greater painted snipe': {
+        'countries': ['IN'],
+        'img': 'images/greater-painted-snipe.jpg'
+    },
+
+    'eurasian woodcock': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-woodcock.jpg'
+    },
+
+    'ruff': {
+        'countries': ['IN'],
+        'img': 'images/ruff.jpg'
+    },
+
+    'red necked phalarope': {
+        'countries': ['IN'],
+        'img': 'images/red-necked-phalarope.jpg'
+    },
+
+    'jack snipe': {
+        'countries': ['IN'],
+        'img': 'images/jack-snipe.jpg'
+    },
+
+    'wood snipe': {
+        'countries': ['IN'],
+        'img': 'images/wood-snipe.jpg'
+    },
+
+    'pin tailed snipe': {
+        'countries': ['IN'],
+        'img': 'images/pin-tailed-snipe.jpg'
+    },
+
+    'swinhoes snipe': {
+        'countries': ['IN'],
+        'img': 'images/swinhoes-snipe.jpg'
+    },
+
+    'common snipe': {
+        'countries': ['IN'],
+        'img': 'images/common-snipe.jpg'
+    },
+
+    'black tailed godwit': {
+        'countries': ['IN'],
+        'img': 'images/black-tailed-godwit.jpg'
+    },
+
+    'bar tailed godwit': {
+        'countries': ['IN'],
+        'img': 'images/bar-tailed-godwit.jpg'
+    },
+
+    'whimbrel': {
+        'countries': ['IN'],
+        'img': 'images/whimbrel.jpg'
+    },
+
+    'eurasian curlew': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-curlew.jpg'
+    },
+
+    'spotted redshank': {
+        'countries': ['IN'],
+        'img': 'images/spotted-redshank.jpg'
+    },
+
+    'common-redshank': {
+        'countries': ['IN'],
+        'img': 'images/common-redshank.jpg'
+    },
+
+    'marsh sandpiper': {
+        'countries': ['IN'],
+        'img': 'images/marsh-sandpiper.jpg'
+    },
+
+    'common greenshank': {
+        'countries': ['IN'],
+        'img': 'images/common-greenshank.jpg'
+    },
+
+    'green sandpiper': {
+        'countries': ['IN'],
+        'img': 'images/green-sandpiper.jpg'
+    },
+
+    'wood sandpiper': {
+        'countries': ['IN'],
+        'img': 'images/wood-sandpiper.jpg'
+    },
+
+    'terek sandpiper': {
+        'countries': ['IN'],
+        'img': 'images/terek-sandpiper.jpg'
+    },
+
+    'common sandpiper': {
+        'countries': ['IN'],
+        'img': 'images/common-sandpiper.jpg'
+    },
+
+    'ruddy turnstone': {
+        'countries': ['IN'],
+        'img': 'images/ruddy-turnstone.jpg'
+    },
+
+    'great knot': {
+        'countries': ['IN'],
+        'img': 'images/great-knot.jpg'
+    },
+
+    'red knot': {
+        'countries': ['IN'],
+        'img': 'images/red-knot.jpg'
+    },
+
+    'little stint': {
+        'countries': ['IN'],
+        'img': 'images/little-stint.jpg'
+    },
+
+    'temmincks stint': {
+        'countries': ['IN'],
+        'img': 'images/temmincks-stint.jpg'
+    },
+
+    'long toed stint': {
+        'countries': ['IN'],
+        'img': 'images/long-toed-stint.jpg'
+    },
+
+    'curlew sandpiper': {
+        'countries': ['IN'],
+        'img': 'images/curlew-sandpiper.jpg'
+    },
+
+    'sanderling': {
+        'countries': ['IN'],
+        'img': 'images/sanderling.jpg'
+    },
+
+    'dunlin': {
+        'countries': ['IN'],
+        'img': 'images/dunlin.jpg'
+    },
+
+    'indian courser': {
+        'countries': ['IN'],
+        'img': 'images/indian-courser.jpg'
+    },
+
+    'oriental pratincole': {
+        'countries': ['IN'],
+        'img': 'images/oriental-pratincole.jpg'
+    },
+
+    'small pratincole': {
+        'countries': ['IN'],
+        'img': 'images/small-pratincole.jpg'
+    },
+
+    'caspian gull': {
+        'countries': ['IN'],
+        'img': 'images/caspian-gull.jpg'
+    },
+
+    'heuglins gull': {
+        'countries': ['IN'],
+        'img': 'images/heuglins-gull.jpg'
+    },
+
+    'steppe gull': {
+        'countries': ['IN'],
+        'img': 'images/steppe-gull.jpg'
+    },
+
+    'pallas gull': {
+        'countries': ['IN'],
+        'img': 'images/pallas-gull.jpg'
     }
 }
