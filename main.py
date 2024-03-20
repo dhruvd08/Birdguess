@@ -4,7 +4,8 @@ import time
 import json
 import requests
 from data import species
-from flask import Flask, request
+from flask import Flask, request, send_file
+import ihm
 
 app = Flask(__name__)
 alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -75,6 +76,8 @@ def notify():
             print('decided species')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))
+            ihm.process(int(game_id), [letter if not letter == ' ' else '*' for letter in letters], 6,
+                        'home/shreedave/Birdguess/imgs/orange-minivet.png')
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}', mode='w') as f:
                 f.write(f'{game_id}')
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
@@ -87,7 +90,8 @@ def notify():
                 }
                 json.dump(obj=new_game, fp=f)
             print('made game_id and game')
-            send('TEXT', ' '.join(letters), content['player_id'])
+            # send('TEXT', ' '.join(letters), content['player_id'])
+            send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
                 game_id = f.read()
@@ -95,6 +99,8 @@ def notify():
                 current_game = json.load(fp=f)
             status: str = current_game['status']
             lives: int = current_game['lives']
+            ihm.process(int(game_id), [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives,
+                        'home/shreedave/Birdguess/imgs/orange-minivet.png')
             if status == 'in_progress':
                 entered_alphabet: str = content['msg_body'].lower()
                 if entered_alphabet.upper() in current_game['letters']:
@@ -107,7 +113,8 @@ def notify():
                             indexs.append(i)
                     for ind in indexs:
                         current_game['letters'][ind] = entered_alphabet.upper()
-                    send('TEXT', ' '.join(current_game['letters']), content['player_id'])
+                    # send('TEXT', ' '.join(current_game['letters']), content['player_id'])
+                    send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
                     if '_' not in current_game['letters']:
                         status = 'over'
                         send('TEXT', 'You got it right!!', content['player_id'])
@@ -135,6 +142,11 @@ def notify():
         return str(http.HTTPStatus.OK.value)
     else:
         return str(http.HTTPStatus.BAD_REQUEST.value)
+
+
+@app.route('/games/img/<game_id>')
+def game_img(game_id: str):
+    return send_file(f'output/{game_id}.png')
 
 
 if __name__ == '__main__':
