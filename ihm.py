@@ -25,8 +25,8 @@ def get_img_path(id_: int) -> str:
     :param id_: Unique image identifier
     :return: Output image local path
     """
-    if os.path.isfile(f'output/{id_}.png'):
-        return f'output/{id_}.png'
+    if os.path.isfile(f'/home/shreedave/Birdguess/output/{id_}.png'):
+        return f'/home/shreedave/Birdguess/output/{id_}.png'
     else:
         return None
 
@@ -66,12 +66,12 @@ def process(id_: int, word: list,
                 upper += box_size
                 lower += box_size
 
-            with shelve.open(f'data/{id_}', flag='c') as db:
+            with shelve.open(f'/home/shreedave/Birdguess/data/{id_}', flag='c') as db:
                 db[f'{id_}'] = Img_data(boxes)
             Image.Image.paste(im, blank_img, (0, 0))
     else:
         # Ongoing game - update image
-        with shelve.open(f'data/{id_}', flag='c') as db:
+        with shelve.open(f'/home/shreedave/Birdguess/data/{id_}', flag='c') as db:
             stored_img_data: Img_data = db[f'{id_}']
 
         no_of_boxes_to_display = int((1024 / box_size) * (1024 / box_size) * 0.03)
@@ -85,7 +85,7 @@ def process(id_: int, word: list,
                 box_idx = stored_img_data.boxes.index(random_box)
                 stored_img_data.boxes.pop(box_idx)
 
-        with shelve.open(f'data/{id_}', flag='c') as db:
+        with shelve.open(f'/home/shreedave/Birdguess/data/{id_}', flag='c') as db:
             db[f'{id_}'] = stored_img_data
 
     # Clear existing text
@@ -111,12 +111,12 @@ def process(id_: int, word: list,
         x_loc += 40
         im = Image.alpha_composite(im, txt)
 
-    with Image.open(f'chances/{chances_remaining}.png', 'r').convert('RGBA').resize((150, 150),
+    with Image.open(f'/home/shreedave/Birdguess/chances/{chances_remaining}.png', 'r').convert('RGBA').resize((150, 150),
                                                                                     PIL.Image.NEAREST) as chances:
         Image.Image.paste(im, chances, (860, 1040))
 
-    im.save(f'output/{id_}.png')
-    return f'output/{id_}.png'
+    im.save(f'/home/shreedave/Birdguess/output/{id_}.png')
+    return f'/home/shreedave/Birdguess/output/{id_}.png'
 
 
 # bird = ['O', 'R', 'A', 'N', 'G', 'E', '*', 'M', 'I', 'N', 'I', 'V', 'E', 'T']
