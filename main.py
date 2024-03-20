@@ -77,7 +77,7 @@ def notify():
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))
             ihm.process(int(game_id), [letter if not letter == ' ' else '*' for letter in letters], 6,
-                        'home/shreedave/Birdguess/imgs/orange-minivet.png')
+                        '/home/shreedave/Birdguess/imgs/orange-minivet.png')
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}', mode='w') as f:
                 f.write(f'{game_id}')
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
@@ -100,7 +100,7 @@ def notify():
             status: str = current_game['status']
             lives: int = current_game['lives']
             ihm.process(int(game_id), [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives,
-                        'home/shreedave/Birdguess/imgs/orange-minivet.png')
+                        '/home/shreedave/Birdguess/imgs/orange-minivet.png')
             if status == 'in_progress':
                 entered_alphabet: str = content['msg_body'].lower()
                 if entered_alphabet.upper() in current_game['letters']:
