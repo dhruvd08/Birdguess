@@ -154,7 +154,7 @@ def game_img(game_id: str):
 
 @app.route('/birds/img/<bird_name>')
 def bird_img(bird_name: str):
-    return send_file(f'/home/shreedave/Birdguess/output/{bird_name}.png')
+    return send_file(f'/home/shreedave/Birdguess/imgs/{bird_name}.png')
 
 
 if __name__ == '__main__':
