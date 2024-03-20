@@ -153,7 +153,7 @@ def game_img(game_id: str):
 
 
 @app.route('/birds/img/<bird_name>')
-def game_img(bird_name: str):
+def bird_img(bird_name: str):
     return send_file(f'/home/shreedave/Birdguess/output/{bird_name}.png')
 
 
