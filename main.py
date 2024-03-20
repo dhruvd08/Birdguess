@@ -89,7 +89,7 @@ def notify():
                     'letters': letters
                 }
                 json.dump(obj=new_game, fp=f)
-            print('made game_id and game')
+
             # send('TEXT', ' '.join(letters), content['player_id'])
             send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
@@ -113,22 +113,23 @@ def notify():
                         current_game['letters'][ind] = entered_alphabet.upper()
                     # send('TEXT', ' '.join(current_game['letters']), content['player_id'])
                     if '_' not in current_game['letters']:
+                        send('IMAGE', 'https://shreedave/pythonanywhere/birds/img/orange-minivet', content['player_id'])
                         status = 'over'
-                        send('TEXT', 'You got it right!!', content['player_id'])
+                        # send('TEXT', 'You got it right!!', content['player_id'])
                 else:
                     lives -= 1
-                    send('TEXT', f'That\'s wrong, you lost a chance. '
-                                 f'Now you have {lives}/6 chances left. ', content['player_id'])
+                    # send('TEXT', f'That\'s wrong, you lost a chance. '
+                    #              f'Now you have {lives}/6 chances left. ', content['player_id'])
                     if lives == 0:
                         status = 'over'
-                        send('TEXT', 'You have no chances left. Game over.', content['player_id'])
+                        # send('TEXT', 'You have no chances left. Game over.', content['player_id'])
+                ihm.process(int(game_id),
+                            [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives,
+                            '/home/shreedave/Birdguess/imgs/orange-minivet.png')
+                send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
             elif status == 'over':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
 
-            ihm.process(int(game_id),
-                        [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives,
-                        '/home/shreedave/Birdguess/imgs/orange-minivet.png')
-            send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
                 new_game = {
                     'game_id': game_id,
@@ -148,7 +149,12 @@ def notify():
 
 @app.route('/games/img/<game_id>')
 def game_img(game_id: str):
-    return send_file(f'output/{game_id}.png')
+    return send_file(f'/home/shreedave/Birdguess/output/{game_id}.png')
+
+
+@app.route('/birds/img/<bird_name>')
+def game_img(bird_name: str):
+    return send_file(f'/home/shreedave/Birdguess/output/{bird_name}.png')
 
 
 if __name__ == '__main__':
