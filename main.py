@@ -5,7 +5,7 @@ import json
 import requests
 from data import species
 from flask import Flask, request, send_file
-import ihm
+import ihm_lite
 
 app = Flask(__name__)
 alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -76,8 +76,8 @@ def notify():
             print('decided species')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))
-            ihm.process(int(game_id), [letter if not letter == ' ' else '*' for letter in letters], 6,
-                        '/home/shreedave/Birdguess/imgs/orange-minivet.png')
+            ihm_lite.process(int(game_id), [letter if not letter == ' ' else '*' for letter in letters],
+                             chances_remaining=6)
             with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}', mode='w') as f:
                 f.write(f'{game_id}')
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
@@ -113,7 +113,8 @@ def notify():
                         current_game['letters'][ind] = entered_alphabet.upper()
                     # send('TEXT', ' '.join(current_game['letters']), content['player_id'])
                     if '_' not in current_game['letters']:
-                        send('IMAGE', 'https://shreedave.pythonanywhere.com/birds/img/orange-minivet', content['player_id'])
+                        send('IMAGE', 'https://shreedave.pythonanywhere.com/birds/img/orange-minivet',
+                             content['player_id'])
                         status = 'over'
                         # send('TEXT', 'You got it right!!', content['player_id'])
                 else:
@@ -123,9 +124,8 @@ def notify():
                     if lives == 0:
                         status = 'over'
                         # send('TEXT', 'You have no chances left. Game over.', content['player_id'])
-                ihm.process(int(game_id),
-                            [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives,
-                            '/home/shreedave/Birdguess/imgs/orange-minivet.png')
+                ihm_lite.process(int(game_id),
+                                 [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives)
                 send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
             elif status == 'over':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
