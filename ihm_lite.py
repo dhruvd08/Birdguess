@@ -27,8 +27,8 @@ def get_img_path(id_: int) -> str:
     :param id_: Unique image identifier
     :return: Output image local path
     """
-    if os.path.isfile(f'output/{id_}.png'):
-        return f'output/{id_}.png'
+    if os.path.isfile(f'/home/shreedave/Birdguess/output/{id_}.png'):
+        return f'/home/shreedave/Birdguess/output/{id_}.png'
     else:
         return None
 
@@ -40,10 +40,10 @@ def process(id_: int, word: list, chances_remaining: int) -> str:
         # random palette
         palette = random.choice(color_comb)
 
-        with shelve.open(f'data/{id_}', flag='c') as db:
+        with shelve.open(f'/home/shreedave/Birdguess/data/{id_}', flag='c') as db:
             db[f'{id_}'] = palette
     else:
-        with shelve.open(f'data/{id_}', flag='c') as db:
+        with shelve.open(f'/home/shreedave/Birdguess/data/{id_}', flag='c') as db:
             palette: Img_data = db[f'{id_}']
 
     print(palette.bg_color, palette.fg_color)
@@ -69,12 +69,12 @@ def process(id_: int, word: list, chances_remaining: int) -> str:
     white_bg = Image.new('RGBA', (1024, 300), color='white')
     Image.Image.paste(im, white_bg, box=(0, 724))
 
-    with Image.open(f'chances/{chances_remaining}.png', 'r').convert('RGBA').resize((300, 300),
+    with Image.open(f'/home/shreedave/Birdguess/chances/{chances_remaining}.png', 'r').convert('RGBA').resize((300, 300),
                                                                                     PIL.Image.NEAREST) as chances:
         Image.Image.paste(im, chances, (0, 724))
 
-    im.save(f'output/{id_}.png')
-    return f'output/{id_}.png'
+    im.save(f'/home/shreedave/Birdguess/output/{id_}.png')
+    return f'/home/shreedave/Birdguess/output/{id_}.png'
 
 
 # bird = ['_', '_', '_', 'N', 'G', 'E', '*', 'M', 'I', 'N', 'I', 'V', 'E', 'T']
