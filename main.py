@@ -115,7 +115,7 @@ def notify():
                     if '_' not in current_game['letters']:
                         send('IMAGE',
                              f'https://shreedave.pythonanywhere.com/birds/img/'
-                             f'{"".join(current_game["species"]).replace("", "-")}',
+                             f'{"".join(current_game["species"]).replace(" ", "-")}',
                              content['player_id'])
                         status = 'over'
                         # send('TEXT', 'You got it right!!', content['player_id'])
