@@ -49,9 +49,9 @@ def notify():
             cont = True
         else:
             cont = False
-            if current_game['status'] == 'over' and content['msg_body'].lower() != 'bg':
-                print('game is over and player did not send "bg"')
-                send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
+            if current_game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
+                print('game is over and player did not send "wgb"')
+                send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
                 with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
                     new_game = {
                         'game_id': game_id,
@@ -65,8 +65,8 @@ def notify():
             else:
                 cont = True
 
-        if content['msg_body'] == 'bg' and cont:
-            print('player sent "bg"')
+        if content['msg_body'].lower() == 'wgb' and cont:
+            print('player sent "wgb"')
             location_vise_species = []
             for sp in species.keys():
                 if content['player_country_code'] in species[sp]['countries']:
@@ -134,7 +134,7 @@ def notify():
                                  [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives)
                     send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
             elif status == 'over':
-                send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
+                send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
 
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
                 new_game = {
