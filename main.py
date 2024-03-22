@@ -97,6 +97,7 @@ def notify():
                 game_id = f.read()
             with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
                 current_game = json.load(fp=f)
+            got_right = False
             status: str = current_game['status']
             lives: int = current_game['lives']
             if status == 'in_progress':
@@ -113,6 +114,8 @@ def notify():
                         current_game['letters'][ind] = entered_alphabet.upper()
                     # send('TEXT', ' '.join(current_game['letters']), content['player_id'])
                     if '_' not in current_game['letters']:
+                        got_right = True
+                        send("TEXT", 'You got it right! Here\'s your bird card.', content['player_id'])
                         send('IMAGE',
                              f'https://shreedave.pythonanywhere.com/birds/img/'
                              f'{"".join(current_game["species"]).replace(" ", "-")}',
@@ -126,9 +129,10 @@ def notify():
                     if lives == 0:
                         status = 'over'
                         # send('TEXT', 'You have no chances left. Game over.', content['player_id'])
-                ihm_lite.process(int(game_id),
+                if not got_right:
+                    ihm_lite.process(int(game_id),
                                  [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives)
-                send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
+                    send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
             elif status == 'over':
                 send('TEXT', 'Send "bg" to start a new game.', content['player_id'])
 

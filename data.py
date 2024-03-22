@@ -24,140 +24,140 @@ species = {
         'img': 'images/orange-minivet.jpg'
     },
 
-    # 'indian golden oriole': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-golden-oriole.jpg'
-    # },
-    #
-    # 'oriental magpie robin': {
-    #     'countries': ['IN'],
-    #     'img': 'images/oriental-magpie-robin.jpg'
-    # },
-    #
-    # 'red whiskered bulbul': {
-    #     'countries': ['IN'],
-    #     'img': 'images/red-whiskered-bulbul.jpg'
-    # },
-    #
-    # 'red vented bulbul': {
-    #     'countries': ['IN'],
-    #     'img': 'images/red-vented-bulbul.jpg'
-    # },
-    #
-    # 'rufous treepie': {
-    #     'countries': ['IN'],
-    #     'img': 'images/rufous-treepie.jpg'
-    # },
-    #
-    # 'crested serpent eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/crested-serpent-eagle.jpg'
-    # },
-    #
-    # 'pied bushchat': {
-    #     'countries': ['IN'],
-    #     'img': 'images/pied-bushchat.jpg'
-    # },
-    #
-    # 'shikra': {
-    #     'countries': ['IN'],
-    #     'img': 'images/shikra.jpg'
-    # },
-    #
-    # 'indian jungle crow': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-jungle-crow.jpg'
-    # },
-    #
-    # 'tickells blue flycatcher': {
-    #     'countries': ['IN'],
-    #     'img': 'images/tickells-blue-flycatcher.jpg'
-    # },
-    #
-    # 'white cheeked barbet': {
-    #     'countries': ['IN'],
-    #     'img': 'images/white-cheeked-barbet.jpg'
-    # },
-    #
-    # 'grey junglefowl': {
-    #     'countries': ['IN'],
-    #     'img': 'images/grey-junglefowl.jpg'
-    # },
-    #
-    # 'common iora': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-iora.jpg'
-    # },
-    #
-    # 'small minivet': {
-    #     'countries': ['IN'],
-    #     'img': 'images/small-minivet.jpg'
-    # },
-    #
-    # 'intermediate egret': {
-    #     'countries': ['IN'],
-    #     'img': 'images/intermediate-egret.jpg'
-    # },
-    #
-    # 'indian yellow tit': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-yellow-tit.jpg'
-    # },
-    #
-    # 'indian grey hornbill': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-grey-hornbill.jpg'
-    # },
-    #
-    # 'indian scimitar babbler': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-scimitar-babbler.jpg'
-    # },
-    #
-    # 'laughing dove': {
-    #     'countries': ['IN'],
-    #     'img': 'images/laughing-dove.jpg'
-    # },
-    #
-    # 'spotted dove': {
-    #     'countries': ['IN'],
-    #     'img': 'images/spotted-dove.jpg'
-    # },
-    #
-    # 'long tailed shrike': {
-    #     'countries': ['IN'],
-    #     'img': 'images/long-tailed-shrike.jpg'
-    # },
-    #
-    # 'black drongo': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-drongo.jpg'
-    # },
-    #
-    # 'white rumped munia': {
-    #     'countries': ['IN'],
-    #     'img': 'images/white-rumped-munia.jpg'
-    # },
-    #
-    # 'indian blackbird': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-blackbird.jpg'
-    # },
-    #
-    # 'indian peafowl': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-peafowl.jpg'
-    # },
-    #
-    # 'oriental honey buzzard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/oriental-honey-buzzard.jpg'
-    # },
-    #
-    # 'brahminy kite': {
-    #     'countries': ['IN'],
-    #     'img': 'images/brahminy-kite.jpg'
-    # },
+    'indian golden oriole': {
+        'countries': ['IN'],
+        'img': 'images/indian-golden-oriole.jpg'
+    },
+
+    'oriental magpie robin': {
+        'countries': ['IN'],
+        'img': 'images/oriental-magpie-robin.jpg'
+    },
+
+    'red whiskered bulbul': {
+        'countries': ['IN'],
+        'img': 'images/red-whiskered-bulbul.jpg'
+    },
+
+    'red vented bulbul': {
+        'countries': ['IN'],
+        'img': 'images/red-vented-bulbul.jpg'
+    },
+
+    'rufous treepie': {
+        'countries': ['IN'],
+        'img': 'images/rufous-treepie.jpg'
+    },
+
+    'crested serpent eagle': {
+        'countries': ['IN'],
+        'img': 'images/crested-serpent-eagle.jpg'
+    },
+
+    'pied bushchat': {
+        'countries': ['IN'],
+        'img': 'images/pied-bushchat.jpg'
+    },
+
+    'shikra': {
+        'countries': ['IN'],
+        'img': 'images/shikra.jpg'
+    },
+
+    'indian jungle crow': {
+        'countries': ['IN'],
+        'img': 'images/indian-jungle-crow.jpg'
+    },
+
+    'tickells blue flycatcher': {
+        'countries': ['IN'],
+        'img': 'images/tickells-blue-flycatcher.jpg'
+    },
+
+    'white cheeked barbet': {
+        'countries': ['IN'],
+        'img': 'images/white-cheeked-barbet.jpg'
+    },
+
+    'grey junglefowl': {
+        'countries': ['IN'],
+        'img': 'images/grey-junglefowl.jpg'
+    },
+
+    'common iora': {
+        'countries': ['IN'],
+        'img': 'images/common-iora.jpg'
+    },
+
+    'small minivet': {
+        'countries': ['IN'],
+        'img': 'images/small-minivet.jpg'
+    },
+
+    'intermediate egret': {
+        'countries': ['IN'],
+        'img': 'images/intermediate-egret.jpg'
+    },
+
+    'indian yellow tit': {
+        'countries': ['IN'],
+        'img': 'images/indian-yellow-tit.jpg'
+    },
+
+    'indian grey hornbill': {
+        'countries': ['IN'],
+        'img': 'images/indian-grey-hornbill.jpg'
+    },
+
+    'indian scimitar babbler': {
+        'countries': ['IN'],
+        'img': 'images/indian-scimitar-babbler.jpg'
+    },
+
+    'laughing dove': {
+        'countries': ['IN'],
+        'img': 'images/laughing-dove.jpg'
+    },
+
+    'spotted dove': {
+        'countries': ['IN'],
+        'img': 'images/spotted-dove.jpg'
+    },
+
+    'long tailed shrike': {
+        'countries': ['IN'],
+        'img': 'images/long-tailed-shrike.jpg'
+    },
+
+    'black drongo': {
+        'countries': ['IN'],
+        'img': 'images/black-drongo.jpg'
+    },
+
+    'white rumped munia': {
+        'countries': ['IN'],
+        'img': 'images/white-rumped-munia.jpg'
+    },
+
+    'indian blackbird': {
+        'countries': ['IN'],
+        'img': 'images/indian-blackbird.jpg'
+    },
+
+    'indian peafowl': {
+        'countries': ['IN'],
+        'img': 'images/indian-peafowl.jpg'
+    },
+
+    'oriental honey buzzard': {
+        'countries': ['IN'],
+        'img': 'images/oriental-honey-buzzard.jpg'
+    },
+
+    'brahminy kite': {
+        'countries': ['IN'],
+        'img': 'images/brahminy-kite.jpg'
+    },
     #
     # 'indian vulture': {
     #     'countries': ['IN'],
