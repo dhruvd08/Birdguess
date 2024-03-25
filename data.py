@@ -333,186 +333,186 @@ species = {
         'countries': ['IN'],
         'img': 'images/plum-headed-parakeet.png'
     },
-    #
-    # 'clamorous reed warbler': {
-    #     'countries': ['IN'],
-    #     'img': 'images/clamorous-reed-warbler.png'
-    # },
-    #
-    # 'common rosefinch': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-rosefinch.png'
-    # },
-    #
-    # 'brahminy starling': {
-    #     'countries': ['IN'],
-    #     'img': 'images/brahminy-starling.png'
-    # },
-    #
-    # 'yellow footed green pigeon': {
-    #     'countries': ['IN'],
-    #     'img': 'images/yellow-footed-green-pigeon.png'
-    # },
-    #
-    # 'brown cheeked fulvetta': {
-    #     'countries': ['IN'],
-    #     'img': 'images/brown-cheeked-fulvetta.png'
-    # },
-    #
-    # 'verditer flycatcher': {
-    #     'countries': ['IN'],
-    #     'img': 'images/verditer-flycatcher.png'
-    # },
-    #
-    # 'pale billed flowerpecker': {
-    #     'countries': ['IN'],
-    #     'img': 'images/verditer-flycatcher.png'
-    # },
-    #
-    # 'painted francolin': {
-    #     'countries': ['IN'],
-    #     'img': 'images/painted-francolin.png'
-    # },
-    #
-    # 'grey francolin': {
-    #     'countries': ['IN'],
-    #     'img': 'images/grey-francolin.png'
-    # },
-    #
-    # 'common quail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-quail.png'
-    # },
-    #
-    # 'rain quail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/rain-quail.png'
-    # },
-    #
-    # 'king quail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/king-quail.png'
-    # },
-    #
-    # 'jungle bush quail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/jungle-bush-quail.png'
-    # },
-    #
-    # 'rock bush quail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/rock-bush-quail.png'
-    # },
-    #
-    # 'painted bush quail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/painted-bush-quail.png'
-    # },
-    #
-    # 'red spurfowl': {
-    #     'countries': ['IN'],
-    #     'img': 'images/red-spurfowl.png'
-    # },
-    #
-    # 'painted spurfowl': {
-    #     'countries': ['IN'],
-    #     'img': 'images/painted-spurfowl.png'
-    # },
-    #
-    # 'lesser whistling duck': {
-    #     'countries': ['IN'],
-    #     'img': 'images/lesser-whistling-duck.png'
-    # },
-    #
-    # 'greylag goose': {
-    #     'countries': ['IN'],
-    #     'img': 'images/greylag-goose.png'
-    # },
-    #
-    # 'bar headed goose': {
-    #     'countries': ['IN'],
-    #     'img': 'images/bar-headed-goose.png'
-    # },
-    #
-    # 'knob billed duck': {
-    #     'countries': ['IN'],
-    #     'img': 'images/knob-billed-duck.png'
-    # },
-    #
-    # 'ruddy shelduck': {
-    #     'countries': ['IN'],
-    #     'img': 'images/ruddy-shelduck.png'
-    # },
-    #
-    # 'cotton pygmy goose': {
-    #     'countries': ['IN'],
-    #     'img': 'images/cotton-pygmy-goose.png'
-    # },
-    #
-    # 'gadwall': {
-    #     'countries': ['IN'],
-    #     'img': 'images/gadwall.png'
-    # },
-    #
-    # 'eurasian wigeon': {
-    #     'countries': ['IN'],
-    #     'img': 'images/eurasian-wigeon.png'
-    # },
-    #
-    # 'mallard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/mallard.png'
-    # },
-    #
-    # 'indian spot billed duck': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-spot-billed-duck.png'
-    # },
-    #
-    # 'northern shoveler': {
-    #     'countries': ['IN'],
-    #     'img': 'images/northern-shoveler.png'
-    # },
-    #
-    # 'northern pintail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/northern-pintail.png'
-    # },
-    #
-    # 'garganey': {
-    #     'countries': ['IN'],
-    #     'img': 'images/garganey.png'
-    # },
-    #
-    # 'common teal': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-teal.png'
-    # },
-    #
-    # 'red crested pochard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/red-crested-pochard.png'
-    # },
-    #
-    # 'common pochard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-pochard.png'
-    # },
-    #
-    # 'ferruginous duck': {
-    #     'countries': ['IN'],
-    #     'img': 'images/ferruginous-duck.png'
-    # },
-    #
-    # 'tufted duck': {
-    #     'countries': ['IN'],
-    #     'img': 'images/tufted-duck.png'
-    # },
-    #
-    # 'little grebe': {
-    #     'countries': ['IN'],
-    #     'img': 'images/little-grebe.png'
-    # },
+
+    'clamorous reed warbler': {
+        'countries': ['IN'],
+        'img': 'images/clamorous-reed-warbler.png'
+    },
+
+    'common rosefinch': {
+        'countries': ['IN'],
+        'img': 'images/common-rosefinch.png'
+    },
+
+    'brahminy starling': {
+        'countries': ['IN'],
+        'img': 'images/brahminy-starling.png'
+    },
+
+    'yellow footed green pigeon': {
+        'countries': ['IN'],
+        'img': 'images/yellow-footed-green-pigeon.png'
+    },
+
+    'brown cheeked fulvetta': {
+        'countries': ['IN'],
+        'img': 'images/brown-cheeked-fulvetta.png'
+    },
+
+    'verditer flycatcher': {
+        'countries': ['IN'],
+        'img': 'images/verditer-flycatcher.png'
+    },
+
+    'pale billed flowerpecker': {
+        'countries': ['IN'],
+        'img': 'images/verditer-flycatcher.png'
+    },
+
+    'painted francolin': {
+        'countries': ['IN'],
+        'img': 'images/painted-francolin.png'
+    },
+
+    'grey francolin': {
+        'countries': ['IN'],
+        'img': 'images/grey-francolin.png'
+    },
+
+    'common quail': {
+        'countries': ['IN'],
+        'img': 'images/common-quail.png'
+    },
+
+    'rain quail': {
+        'countries': ['IN'],
+        'img': 'images/rain-quail.png'
+    },
+
+    'king quail': {
+        'countries': ['IN'],
+        'img': 'images/king-quail.png'
+    },
+
+    'jungle bush quail': {
+        'countries': ['IN'],
+        'img': 'images/jungle-bush-quail.png'
+    },
+
+    'rock bush quail': {
+        'countries': ['IN'],
+        'img': 'images/rock-bush-quail.png'
+    },
+
+    'painted bush quail': {
+        'countries': ['IN'],
+        'img': 'images/painted-bush-quail.png'
+    },
+
+    'red spurfowl': {
+        'countries': ['IN'],
+        'img': 'images/red-spurfowl.png'
+    },
+
+    'painted spurfowl': {
+        'countries': ['IN'],
+        'img': 'images/painted-spurfowl.png'
+    },
+
+    'lesser whistling duck': {
+        'countries': ['IN'],
+        'img': 'images/lesser-whistling-duck.png'
+    },
+
+    'greylag goose': {
+        'countries': ['IN'],
+        'img': 'images/greylag-goose.png'
+    },
+
+    'bar headed goose': {
+        'countries': ['IN'],
+        'img': 'images/bar-headed-goose.png'
+    },
+
+    'knob billed duck': {
+        'countries': ['IN'],
+        'img': 'images/knob-billed-duck.png'
+    },
+
+    'ruddy shelduck': {
+        'countries': ['IN'],
+        'img': 'images/ruddy-shelduck.png'
+    },
+
+    'cotton pygmy goose': {
+        'countries': ['IN'],
+        'img': 'images/cotton-pygmy-goose.png'
+    },
+
+    'gadwall': {
+        'countries': ['IN'],
+        'img': 'images/gadwall.png'
+    },
+
+    'eurasian wigeon': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-wigeon.png'
+    },
+
+    'mallard': {
+        'countries': ['IN'],
+        'img': 'images/mallard.png'
+    },
+
+    'indian spot billed duck': {
+        'countries': ['IN'],
+        'img': 'images/indian-spot-billed-duck.png'
+    },
+
+    'northern shoveler': {
+        'countries': ['IN'],
+        'img': 'images/northern-shoveler.png'
+    },
+
+    'northern pintail': {
+        'countries': ['IN'],
+        'img': 'images/northern-pintail.png'
+    },
+
+    'garganey': {
+        'countries': ['IN'],
+        'img': 'images/garganey.png'
+    },
+
+    'common teal': {
+        'countries': ['IN'],
+        'img': 'images/common-teal.png'
+    },
+
+    'red crested pochard': {
+        'countries': ['IN'],
+        'img': 'images/red-crested-pochard.png'
+    },
+
+    'common pochard': {
+        'countries': ['IN'],
+        'img': 'images/common-pochard.png'
+    },
+
+    'ferruginous duck': {
+        'countries': ['IN'],
+        'img': 'images/ferruginous-duck.png'
+    },
+
+    'tufted duck': {
+        'countries': ['IN'],
+        'img': 'images/tufted-duck.png'
+    },
+
+    'little grebe': {
+        'countries': ['IN'],
+        'img': 'images/little-grebe.png'
+    },
     #
     # 'painted stork': {
     #     'countries': ['IN'],
