@@ -513,191 +513,196 @@ species = {
         'countries': ['IN'],
         'img': 'images/little-grebe.png'
     },
-    #
-    # 'painted stork': {
-    #     'countries': ['IN'],
-    #     'img': 'images/painted-stork.png'
-    # },
-    #
-    # 'asian openbill': {
-    #     'countries': ['IN'],
-    #     'img': 'images/asian-openbill.png'
-    # },
-    #
-    # 'black stork': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-stork.png'
-    # },
-    #
-    # 'asian woolly necked stork': {
-    #     'countries': ['IN'],
-    #     'img': 'images/asian-woolly-necked-stork.png'
-    # },
-    #
-    # 'white stork': {
-    #     'countries': ['IN'],
-    #     'img': 'images/white-stork.png'
-    # },
-    #
-    # 'lesser adjutant': {
-    #     'countries': ['IN'],
-    #     'img': 'images/lesser-adjutant.png'
-    # },
-    #
-    # 'greater flamingo': {
-    #     'countries': ['IN'],
-    #     'img': 'images/greater-flamingo.png'
-    # },
-    #
-    # 'lesser flamingo': {
-    #     'countries': ['IN'],
-    #     'img': 'images/lesser-flamingo.png'
-    # },
-    #
-    # 'black headed ibis': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-headed-ibis.png'
-    # },
-    #
-    # 'red naped ibis': {
-    #     'countries': ['IN'],
-    #     'img': 'images/red-naped-ibis.png'
-    # },
-    #
-    # 'glossy ibis': {
-    #     'countries': ['IN'],
-    #     'img': 'images/glossy-ibis.png'
-    # },
-    #
-    # 'eurasian spoonbill': {
-    #     'countries': ['IN'],
-    #     'img': 'images/eurasian-spoonbill.png'
-    # },
-    #
-    # 'black bittern': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-bittern.png'
-    # },
-    #
-    # 'cinnamon bittern': {
-    #     'countries': ['IN'],
-    #     'img': 'images/cinnamon-bittern.png'
-    # },
-    #
-    # 'yellow bittern': {
-    #     'countries': ['IN'],
-    #     'img': 'images/yellow-bittern.png'
-    # },
-    #
-    # 'great bittern': {
-    #     'countries': ['IN'],
-    #     'img': 'images/great-bittern.png'
-    # },
-    #
-    # 'striated heron': {
-    #     'countries': ['IN'],
-    #     'img': 'images/striated-heron.png'
-    # },
-    #
-    # 'malayan night heron': {
-    #     'countries': ['IN'],
-    #     'img': 'images/malayan-night-heron.png'
-    # },
-    #
-    # 'purple heron': {
-    #     'countries': ['IN'],
-    #     'img': 'images/purple-heron.png'
-    # },
-    #
-    # 'eastern cattle egret': {
-    #     'countries': ['IN'],
-    #     'img': 'images/eastern-cattle-egret.png'
-    # },
-    #
-    # 'great egret': {
-    #     'countries': ['IN'],
-    #     'img': 'images/great-egret.png'
-    # },
-    #
-    # 'little egret': {
-    #     'countries': ['IN'],
-    #     'img': 'images/little-egret.png'
-    # },
-    #
-    # 'western reef egret': {
-    #     'countries': ['IN'],
-    #     'img': 'images/western-reef-egret.png'
-    # },
-    #
-    # 'spot billed pelican': {
-    #     'countries': ['IN'],
-    #     'img': 'images/spot-billed-pelican.png'
-    # },
-    #
-    # 'darter': {
-    #     'countries': ['IN'],
-    #     'img': 'images/darter.png'
-    # },
-    #
-    # 'indian cormorant': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-cormorant.png'
-    # },
-    #
-    # 'great cormorant': {
-    #     'countries': ['IN'],
-    #     'img': 'images/great-cormorant.png'
-    # },
-    #
-    # 'red necked falcon': {
-    #     'countries': ['IN'],
-    #     'img': 'images/red-necked-falcon.png'
-    # },
-    #
-    # 'laggar falcon': {
-    #     'countries': ['IN'],
-    #     'img': 'images/laggar-falcon.png'
-    # },
-    #
-    # 'peregrine falcon': {
-    #     'countries': ['IN'],
-    #     'img': 'images/peregrine-falcon.png'
-    # },
-    #
-    # 'jerdons baza': {
-    #     'countries': ['IN'],
-    #     'img': 'images/jerdons-baza.png'
-    # },
-    #
-    # 'black baza': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-baza.png'
-    # },
-    #
-    # 'black kite': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-kite.png'
-    # },
-    #
-    # 'osprey': {
-    #     'countries': ['IN'],
-    #     'img': 'images/osprey.png'
-    # },
-    #
-    # 'white bellied sea eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/white-bellied-sea-eagle.png'
-    # },
-    #
-    # 'lesser fish eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/lesser-fish-eagle.png'
-    # },
-    #
-    # 'grey headed fish eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/grey-headed-fish-eagle.png'
-    # },
+
+    'painted stork': {
+        'countries': ['IN'],
+        'img': 'images/painted-stork.png'
+    },
+
+    'asian openbill': {
+        'countries': ['IN'],
+        'img': 'images/asian-openbill.png'
+    },
+
+    'black stork': {
+        'countries': ['IN'],
+        'img': 'images/black-stork.png'
+    },
+
+    'asian woolly necked stork': {
+        'countries': ['IN'],
+        'img': 'images/asian-woolly-necked-stork.png'
+    },
+
+    'white stork': {
+        'countries': ['IN'],
+        'img': 'images/white-stork.png'
+    },
+
+    'lesser adjutant': {
+        'countries': ['IN'],
+        'img': 'images/lesser-adjutant.png'
+    },
+
+    'greater flamingo': {
+        'countries': ['IN'],
+        'img': 'images/greater-flamingo.png'
+    },
+
+    'lesser flamingo': {
+        'countries': ['IN'],
+        'img': 'images/lesser-flamingo.png'
+    },
+
+    'black headed ibis': {
+        'countries': ['IN'],
+        'img': 'images/black-headed-ibis.png'
+    },
+
+    'red naped ibis': {
+        'countries': ['IN'],
+        'img': 'images/red-naped-ibis.png'
+    },
+
+    'glossy ibis': {
+        'countries': ['IN'],
+        'img': 'images/glossy-ibis.png'
+    },
+
+    'eurasian spoonbill': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-spoonbill.png'
+    },
+
+    'black bittern': {
+        'countries': ['IN'],
+        'img': 'images/black-bittern.png'
+    },
+
+    'cinnamon bittern': {
+        'countries': ['IN'],
+        'img': 'images/cinnamon-bittern.png'
+    },
+
+    'yellow bittern': {
+        'countries': ['IN'],
+        'img': 'images/yellow-bittern.png'
+    },
+
+    'great bittern': {
+        'countries': ['IN'],
+        'img': 'images/great-bittern.png'
+    },
+
+    'striated heron': {
+        'countries': ['IN'],
+        'img': 'images/striated-heron.png'
+    },
+
+    'malayan night heron': {
+        'countries': ['IN'],
+        'img': 'images/malayan-night-heron.png'
+    },
+
+    'purple heron': {
+        'countries': ['IN'],
+        'img': 'images/purple-heron.png'
+    },
+
+    'eastern cattle egret': {
+        'countries': ['IN'],
+        'img': 'images/eastern-cattle-egret.png'
+    },
+
+    'great egret': {
+        'countries': ['IN'],
+        'img': 'images/great-egret.png'
+    },
+
+    'little egret': {
+        'countries': ['IN'],
+        'img': 'images/little-egret.png'
+    },
+
+    'western reef egret': {
+        'countries': ['IN'],
+        'img': 'images/western-reef-egret.png'
+    },
+
+    'spot billed pelican': {
+        'countries': ['IN'],
+        'img': 'images/spot-billed-pelican.png'
+    },
+
+    'oriental darter': {
+        'countries': ['IN'],
+        'img': 'images/oriental-darter.png'
+    },
+
+    'indian cormorant': {
+        'countries': ['IN'],
+        'img': 'images/indian-cormorant.png'
+    },
+
+    'great cormorant': {
+        'countries': ['IN'],
+        'img': 'images/great-cormorant.png'
+    },
+
+    'red necked falcon': {
+        'countries': ['IN'],
+        'img': 'images/red-necked-falcon.png'
+    },
+
+    'laggar falcon': {
+        'countries': ['IN'],
+        'img': 'images/laggar-falcon.png'
+    },
+
+    'peregrine falcon': {
+        'countries': ['IN'],
+        'img': 'images/peregrine-falcon.png'
+    },
+
+    'lesser kestrel': {
+        'countries': ['IN'],
+        'img': 'images/lesser-kestrel.png'
+    },
+
+    'jerdons baza': {
+        'countries': ['IN'],
+        'img': 'images/jerdons-baza.png'
+    },
+
+    'black baza': {
+        'countries': ['IN'],
+        'img': 'images/black-baza.png'
+    },
+
+    'black kite': {
+        'countries': ['IN'],
+        'img': 'images/black-kite.png'
+    },
+
+    'osprey': {
+        'countries': ['IN'],
+        'img': 'images/osprey.png'
+    },
+
+    'white bellied sea eagle': {
+        'countries': ['IN'],
+        'img': 'images/white-bellied-sea-eagle.png'
+    },
+
+    'lesser fish eagle': {
+        'countries': ['IN'],
+        'img': 'images/lesser-fish-eagle.png'
+    },
+
+    'grey headed fish eagle': {
+        'countries': ['IN'],
+        'img': 'images/grey-headed-fish-eagle.png'
+    },
     #
     # 'black eagle': {
     #     'countries': ['IN'],
