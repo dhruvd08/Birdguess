@@ -28,8 +28,10 @@ def send(msg_type: str, msg: str, to: int):
         'api-key': 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'
     }
 
-    response = requests.post(url=endpoint, json=input_params, headers=header).json()
-    print(response)
+    try:
+        response = requests.post(url=endpoint, json=input_params, headers=header, timeout=1).json()
+    except:
+        pass
 
 
 @app.route('/notify-wh', methods=['POST'])
