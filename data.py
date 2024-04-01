@@ -703,281 +703,281 @@ species = {
         'countries': ['IN'],
         'img': 'images/grey-headed-fish-eagle.png'
     },
-    #
-    # 'black eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-eagle.png'
-    # },
-    #
-    # 'egyptian vulture': {
-    #     'countries': ['IN'],
-    #     'img': 'images/egyptian-vulture.png'
-    # },
-    #
-    # 'short toed snake eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/short-toed-snake-eagle.png'
-    # },
-    #
-    # 'eurasian marsh harrier': {
-    #     'countries': ['IN'],
-    #     'img': 'images/eurasian-marsh-harrier.png'
-    # },
-    #
-    # 'pallid harrier': {
-    #     'countries': ['IN'],
-    #     'img': 'images/pallid-harrier.png'
-    # },
-    #
-    # 'montagus harrier': {
-    #     'countries': ['IN'],
-    #     'img': 'images/montagus-harrier.png'
-    # },
-    #
-    # 'pied harrier': {
-    #     'countries': ['IN'],
-    #     'img': 'images/pied-harrier.png'
-    # },
-    #
-    # 'crested goshawk': {
-    #     'countries': ['IN'],
-    #     'img': 'images/crested-goshawk.png'
-    # },
-    #
-    # 'besra': {
-    #     'countries': ['IN'],
-    #     'img': 'images/besra.png'
-    # },
-    #
-    # 'eurasian sparrowhawk': {
-    #     'countries': ['IN'],
-    #     'img': 'images/eurasian-sparrowhawk.png'
-    # },
-    #
-    # 'white eyed buzzard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/white-eyed-buzzard.png'
-    # },
-    #
-    # 'common buzzard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-buzzard.png'
-    # },
-    #
-    # 'greater spotted eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/greater-spotted-eagle.png'
-    # },
-    #
-    # 'indian spotted eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-spotted-eagle.png'
-    # },
-    #
-    # 'tawny eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/tawny-eagle.png'
-    # },
-    #
-    # 'steppe eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/steppe-eagle.png'
-    # },
-    #
-    # 'imperial eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/imperial-eagle.png'
-    # },
-    #
-    # 'bonellis eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/bonellis-eagle.png'
-    # },
-    #
-    # 'booted eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/booted-eagle.png'
-    # },
-    #
-    # 'rufous bellied eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/rufous-bellied-eagle.png'
-    # },
-    #
-    # 'crested hawk eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/crested-hawk-eagle.png'
-    # },
-    #
-    # 'legges hawk eagle': {
-    #     'countries': ['IN'],
-    #     'img': 'images/imperial-eagle.png'
-    # },
-    #
-    # 'great indian bustard': {
-    #     'countries': ['IN'],
-    #     'img': 'images/great-indian-bustard.png'
-    # },
-    #
-    # 'lesser florican': {
-    #     'countries': ['IN'],
-    #     'img': 'images/lesser-florican.png'
-    # },
-    #
-    # 'slaty legged crake': {
-    #     'countries': ['IN'],
-    #     'img': 'images/slaty-legged-crake.png'
-    # },
-    #
-    # 'slaty breasted crake': {
-    #     'countries': ['IN'],
-    #     'img': 'images/slaty-breasted-crake.png'
-    # },
-    #
-    # 'baillons crake': {
-    #     'countries': ['IN'],
-    #     'img': 'images/baillons-crake.png'
-    # },
-    #
-    # 'brown crake': {
-    #     'countries': ['IN'],
-    #     'img': 'images/brown-crake.png'
-    # },
-    #
-    # 'spotted crake': {
-    #     'countries': ['IN'],
-    #     'img': 'images/spotted-crake.png'
-    # },
-    #
-    # 'ruddy breasted crake': {
-    #     'countries': ['IN'],
-    #     'img': 'images/ruddy-breasted-crake.png'
-    # },
-    #
-    # 'watercock': {
-    #     'countries': ['IN'],
-    #     'img': 'images/watercock.png'
-    # },
-    #
-    # 'common coot': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-coot.png'
-    # },
-    #
-    # 'common moorhen': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-moorhen.png'
-    # },
-    #
-    # 'grey headed swamphen': {
-    #     'countries': ['IN'],
-    #     'img': 'images/grey-headed-swamphen.png'
-    # },
-    #
-    # 'small buttonquail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/small-buttonquail.png'
-    # },
-    #
-    # 'yellow legged buttonquail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/yellow-legged-buttonquail.png'
-    # },
-    #
-    # 'barred buttonquail': {
-    #     'countries': ['IN'],
-    #     'img': 'images/barred-buttonquail.png'
-    # },
-    #
-    # 'demoiselle crane': {
-    #     'countries': ['IN'],
-    #     'img': 'images/demoiselle-crane.png'
-    # },
-    #
-    # 'common crane': {
-    #     'countries': ['IN'],
-    #     'img': 'images/common-crane.png'
-    # },
-    #
-    # 'indian thick knee': {
-    #     'countries': ['IN'],
-    #     'img': 'images/indian-thick-knee.png'
-    # },
-    #
-    # 'great thick knee': {
-    #     'countries': ['IN'],
-    #     'img': 'images/great-thick-knee.png'
-    # },
-    #
-    # 'pheasant tailed jacana': {
-    #     'countries': ['IN'],
-    #     'img': 'images/pheasant-tailed-jacana.png'
-    # },
-    #
-    # 'bronze winged jacana': {
-    #     'countries': ['IN'],
-    #     'img': 'images/bronze-winged-jacana.png'
-    # },
-    #
-    # 'eurasian oystercatcher': {
-    #     'countries': ['IN'],
-    #     'img': 'images/eurasian-oystercatcher.png'
-    # },
-    #
-    # 'pied avocet': {
-    #     'countries': ['IN'],
-    #     'img': 'images/pied-avocet.png'
-    # },
-    #
-    # 'black winged stilt': {
-    #     'countries': ['IN'],
-    #     'img': 'images/black-winged-stilt.png'
-    # },
-    #
-    # 'yellow wattled lapwing': {
-    #     'countries': ['IN'],
-    #     'img': 'images/yellow-wattled-lapwing.png'
-    # },
-    #
-    # 'grey headed lapwing': {
-    #     'countries': ['IN'],
-    #     'img': 'images/grey-headed-lapwing.png'
-    # },
-    #
-    # 'pacific golden plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/pacific-golden-plover.png'
-    # },
-    #
-    # 'grey plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/grey-plover.png'
-    # },
-    #
-    # 'crab plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/crab-plover.png'
-    # },
-    #
-    # 'little ringed plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/little-ringed-plover.png'
-    # },
-    #
-    # 'kentish plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/kentish-plover.png'
-    # },
-    #
-    # 'greater sand plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/greater-sand-plover.png'
-    # },
-    #
-    # 'lesser sand plover': {
-    #     'countries': ['IN'],
-    #     'img': 'images/lesser-sand-plover.png'
-    # },
+
+    'black eagle': {
+        'countries': ['IN'],
+        'img': 'images/black-eagle.png'
+    },
+
+    'egyptian vulture': {
+        'countries': ['IN'],
+        'img': 'images/egyptian-vulture.png'
+    },
+
+    'short toed snake eagle': {
+        'countries': ['IN'],
+        'img': 'images/short-toed-snake-eagle.png'
+    },
+
+    'eurasian marsh harrier': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-marsh-harrier.png'
+    },
+
+    'pallid harrier': {
+        'countries': ['IN'],
+        'img': 'images/pallid-harrier.png'
+    },
+
+    'montagus harrier': {
+        'countries': ['IN'],
+        'img': 'images/montagus-harrier.png'
+    },
+
+    'pied harrier': {
+        'countries': ['IN'],
+        'img': 'images/pied-harrier.png'
+    },
+
+    'crested goshawk': {
+        'countries': ['IN'],
+        'img': 'images/crested-goshawk.png'
+    },
+
+    'besra': {
+        'countries': ['IN'],
+        'img': 'images/besra.png'
+    },
+
+    'eurasian sparrowhawk': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-sparrowhawk.png'
+    },
+
+    'white eyed buzzard': {
+        'countries': ['IN'],
+        'img': 'images/white-eyed-buzzard.png'
+    },
+
+    'common buzzard': {
+        'countries': ['IN'],
+        'img': 'images/common-buzzard.png'
+    },
+
+    'greater spotted eagle': {
+        'countries': ['IN'],
+        'img': 'images/greater-spotted-eagle.png'
+    },
+
+    'indian spotted eagle': {
+        'countries': ['IN'],
+        'img': 'images/indian-spotted-eagle.png'
+    },
+
+    'tawny eagle': {
+        'countries': ['IN'],
+        'img': 'images/tawny-eagle.png'
+    },
+
+    'steppe eagle': {
+        'countries': ['IN'],
+        'img': 'images/steppe-eagle.png'
+    },
+
+    'imperial eagle': {
+        'countries': ['IN'],
+        'img': 'images/imperial-eagle.png'
+    },
+
+    'bonellis eagle': {
+        'countries': ['IN'],
+        'img': 'images/bonellis-eagle.png'
+    },
+
+    'booted eagle': {
+        'countries': ['IN'],
+        'img': 'images/booted-eagle.png'
+    },
+
+    'rufous bellied eagle': {
+        'countries': ['IN'],
+        'img': 'images/rufous-bellied-eagle.png'
+    },
+
+    'crested hawk eagle': {
+        'countries': ['IN'],
+        'img': 'images/crested-hawk-eagle.png'
+    },
+
+    'legges hawk eagle': {
+        'countries': ['IN'],
+        'img': 'images/imperial-eagle.png'
+    },
+
+    'great indian bustard': {
+        'countries': ['IN'],
+        'img': 'images/great-indian-bustard.png'
+    },
+
+    'lesser florican': {
+        'countries': ['IN'],
+        'img': 'images/lesser-florican.png'
+    },
+
+    'slaty legged crake': {
+        'countries': ['IN'],
+        'img': 'images/slaty-legged-crake.png'
+    },
+
+    'slaty breasted crake': {
+        'countries': ['IN'],
+        'img': 'images/slaty-breasted-crake.png'
+    },
+
+    'baillons crake': {
+        'countries': ['IN'],
+        'img': 'images/baillons-crake.png'
+    },
+
+    'brown crake': {
+        'countries': ['IN'],
+        'img': 'images/brown-crake.png'
+    },
+
+    'spotted crake': {
+        'countries': ['IN'],
+        'img': 'images/spotted-crake.png'
+    },
+
+    'ruddy breasted crake': {
+        'countries': ['IN'],
+        'img': 'images/ruddy-breasted-crake.png'
+    },
+
+    'watercock': {
+        'countries': ['IN'],
+        'img': 'images/watercock.png'
+    },
+
+    'common coot': {
+        'countries': ['IN'],
+        'img': 'images/common-coot.png'
+    },
+
+    'common moorhen': {
+        'countries': ['IN'],
+        'img': 'images/common-moorhen.png'
+    },
+
+    'grey headed swamphen': {
+        'countries': ['IN'],
+        'img': 'images/grey-headed-swamphen.png'
+    },
+
+    'small buttonquail': {
+        'countries': ['IN'],
+        'img': 'images/small-buttonquail.png'
+    },
+
+    'yellow legged buttonquail': {
+        'countries': ['IN'],
+        'img': 'images/yellow-legged-buttonquail.png'
+    },
+
+    'barred buttonquail': {
+        'countries': ['IN'],
+        'img': 'images/barred-buttonquail.png'
+    },
+
+    'demoiselle crane': {
+        'countries': ['IN'],
+        'img': 'images/demoiselle-crane.png'
+    },
+
+    'common crane': {
+        'countries': ['IN'],
+        'img': 'images/common-crane.png'
+    },
+
+    'indian thick knee': {
+        'countries': ['IN'],
+        'img': 'images/indian-thick-knee.png'
+    },
+
+    'great thick knee': {
+        'countries': ['IN'],
+        'img': 'images/great-thick-knee.png'
+    },
+
+    'pheasant tailed jacana': {
+        'countries': ['IN'],
+        'img': 'images/pheasant-tailed-jacana.png'
+    },
+
+    'bronze winged jacana': {
+        'countries': ['IN'],
+        'img': 'images/bronze-winged-jacana.png'
+    },
+
+    'eurasian oystercatcher': {
+        'countries': ['IN'],
+        'img': 'images/eurasian-oystercatcher.png'
+    },
+
+    'pied avocet': {
+        'countries': ['IN'],
+        'img': 'images/pied-avocet.png'
+    },
+
+    'black winged stilt': {
+        'countries': ['IN'],
+        'img': 'images/black-winged-stilt.png'
+    },
+
+    'yellow wattled lapwing': {
+        'countries': ['IN'],
+        'img': 'images/yellow-wattled-lapwing.png'
+    },
+
+    'grey headed lapwing': {
+        'countries': ['IN'],
+        'img': 'images/grey-headed-lapwing.png'
+    },
+
+    'pacific golden plover': {
+        'countries': ['IN'],
+        'img': 'images/pacific-golden-plover.png'
+    },
+
+    'grey plover': {
+        'countries': ['IN'],
+        'img': 'images/grey-plover.png'
+    },
+
+    'crab plover': {
+        'countries': ['IN'],
+        'img': 'images/crab-plover.png'
+    },
+
+    'little ringed plover': {
+        'countries': ['IN'],
+        'img': 'images/little-ringed-plover.png'
+    },
+
+    'kentish plover': {
+        'countries': ['IN'],
+        'img': 'images/kentish-plover.png'
+    },
+
+    'greater sand plover': {
+        'countries': ['IN'],
+        'img': 'images/greater-sand-plover.png'
+    },
+
+    'lesser sand plover': {
+        'countries': ['IN'],
+        'img': 'images/lesser-sand-plover.png'
+    },
     #
     # 'greater painted snipe': {
     #     'countries': ['IN'],
