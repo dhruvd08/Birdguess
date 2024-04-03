@@ -978,7 +978,7 @@ species = {
         'countries': ['IN'],
         'img': 'images/lesser-sand-plover.png'
     },
-    #
+
     # 'greater painted snipe': {
     #     'countries': ['IN'],
     #     'img': 'images/greater-painted-snipe.png'
