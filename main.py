@@ -9,6 +9,7 @@ import ihm_lite
 from wgb import wgb
 
 home_path = '/home/shreedave/Birdguess/'
+# home_path = ''
 
 app = Flask(__name__)
 alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -79,7 +80,7 @@ def notify():
 
             bird_id: int = random.randint(1, len(wgb))
             print(bird_id)
-            chosen_species = wgb[bird_id - 1]
+            chosen_species = wgb[bird_id - 1][str(bird_id)]['word']
             print(f'decided species is {chosen_species}')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))

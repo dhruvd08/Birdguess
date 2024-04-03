@@ -6,6 +6,7 @@ import PIL.Image
 from PIL import Image, ImageFont, ImageDraw
 
 home_path = '/home/shreedave/Birdguess/'
+# home_path = ''
 
 
 class Img_data:
@@ -29,8 +30,8 @@ def get_img_path(id_: int) -> str:
     :param id_: Unique image identifier
     :return: Output image local path
     """
-    if os.path.isfile(f'/home/shreedave/Birdguess/output/{id_}.png'):
-        return f'/home/shreedave/Birdguess/output/{id_}.png'
+    if os.path.isfile(f'{home_path}output/{id_}.png'):
+        return f'{home_path}output/{id_}.png'
     else:
         return None
 
