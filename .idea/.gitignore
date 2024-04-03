@@ -4,3 +4,4 @@
 /imgs/
 /imgs/*.png
 /chances/*.png
+.env
