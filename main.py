@@ -4,12 +4,16 @@ import time
 import json
 import requests
 from data import species
+from dbmodel import GameDBO
 from flask import Flask, request, send_file
 import ihm_lite
 from wgb import wgb
+import dbmanager
 
 home_path = '/home/shreedave/Birdguess/'
 # home_path = ''
+
+local = False
 
 app = Flask(__name__)
 alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -58,16 +62,8 @@ def notify():
             if current_game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
                 print('game is over and player did not send "wgb"')
                 send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
-                with open(f'{home_path}player_data/{game_id}.json', mode='w') as f:
-                    new_game = {
-                        'game_id': game_id,
-                        'species': current_game['species'],
-                        'status': current_game['status'],
-                        'lives': current_game['lives'],
-                        'letters': current_game['letters']
-                    }
-                    json.dump(obj=new_game, fp=f)
-                    return str(http.HTTPStatus.OK.value)
+
+                return str(http.HTTPStatus.OK.value)
             else:
                 cont = True
 
@@ -84,22 +80,15 @@ def notify():
             print(f'decided species is {chosen_species}')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))
+            new_game = GameDBO(player_id=int(content['player_id']), status='in_progress', cmd='wgb',
+                               word_id=int(bird_id), word=chosen_species, lives=6, current_letters=''.join(letters))
+            dbmanager.create_game(g=new_game)
+            game_id = dbmanager.get_latest_game_by_player_id(player_id=content['player_id'])['id']
             ihm_lite.process(int(game_id), [letter if not letter == ' ' else '*' for letter in letters],
                              chances_remaining=6)
-            with open(f'{home_path}data/{content["player_id"]}', mode='w') as f:
-                f.write(f'{game_id}')
-            with open(f'{home_path}player_data/{game_id}.json', mode='w') as f:
-                new_game = {
-                    'game_id': game_id,
-                    'species': [letter for letter in chosen_species],
-                    'status': 'in_progress',
-                    'lives': 6,
-                    'letters': letters
-                }
-                json.dump(obj=new_game, fp=f)
-
             # send('TEXT', ' '.join(letters), content['player_id'])
-            send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
+            if not local:
+                send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
             with open(f'{home_path}data/{content["player_id"]}') as f:
                 game_id = f.read()
@@ -108,27 +97,33 @@ def notify():
             got_right = False
             status: str = current_game['status']
             lives: int = current_game['lives']
+
+            current_game = dbmanager.get_latest_game_by_player_id(player_id=content['player_id'])
+            print(current_game)
+            game_id = str(current_game['id'])
+            status = current_game['status']
+            lives = current_game['lives']
             if status == 'in_progress':
                 entered_alphabet: str = content['msg_body'].lower()
-                if entered_alphabet.upper() in current_game['letters']:
+                if entered_alphabet.upper() in current_game['current_letters']:
                     send('TEXT', f'You have already placed that alphabet.', content['player_id'])
                     return str(http.HTTPStatus.OK.value)
-                elif entered_alphabet in current_game['species']:
+                elif entered_alphabet in current_game['word']:
                     indexs = []
-                    for i, let in enumerate(current_game['species']):
+                    for i, let in enumerate(current_game['word']):
                         if let == entered_alphabet:
                             indexs.append(i)
                     for ind in indexs:
-                        current_game['letters'][ind] = entered_alphabet.upper()
+                        current_game['current_letters'][ind] = entered_alphabet.upper()
                     # send('TEXT', ' '.join(current_game['letters']), content['player_id'])
-                    if '_' not in current_game['letters']:
+                    if '_' not in current_game['current_letters']:
                         got_right = True
                         send("TEXT", 'You got it right! Here\'s your bird card.', content['player_id'])
                         send('IMAGE',
                              f'https://shreedave.pythonanywhere.com/birds/img/'
-                             f'{"".join(current_game["species"]).replace(" ", "-")}',
+                             f'{"".join(current_game["word"]).replace(" ", "-")}',
                              content['player_id'])
-                        status = 'over'
+                        status = 'done'
                         # send('TEXT', 'You got it right!!', content['player_id'])
                 else:
                     lives -= 1
@@ -137,22 +132,18 @@ def notify():
                     if lives == 0:
                         status = 'over'
                         # send('TEXT', 'You have no chances left. Game over.', content['player_id'])
+                    dbmanager.update_lives(game_id=game_id, lives=lives, status=status)
                 if not got_right:
                     ihm_lite.process(int(game_id),
-                                 [letter if not letter == ' ' else '*' for letter in current_game['letters']], lives)
-                    send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
-            elif status == 'over':
+                                     [letter if not letter == ' ' else '*' for letter in current_game['current_letters']],
+                                     lives)
+                    if not local:
+                        send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
+            elif status == 'over' or status == 'done':
                 send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
 
-            with open(f'{home_path}player_data/{game_id}.json', mode='w') as f:
-                new_game = {
-                    'game_id': game_id,
-                    'species': current_game['species'],
-                    'status': status,
-                    'lives': lives,
-                    'letters': current_game['letters']
-                }
-                json.dump(obj=new_game, fp=f)
+            dbmanager.update_game(game_id=game_id, current_letters=''.join(current_game['current_letters']),
+                                  status=status)
             return str(http.HTTPStatus.OK.value)
         elif cont:
             send('TEXT', f'"{content["msg_body"]}" is not in the alphabetic order.', content['player_id'])
