@@ -79,7 +79,6 @@ def notify():
             chosen_species = wgb[bird_id - 1][str(bird_id)]['word']
             print(f'decided species is {chosen_species}')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
-            game_id = str(int(time.time()))
             new_game = GameDBO(player_id=int(content['player_id']), status='in_progress', cmd='wgb',
                                word_id=int(bird_id), word=chosen_species, lives=6, current_letters=''.join(letters))
             dbmanager.create_game(g=new_game)
