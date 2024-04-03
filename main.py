@@ -50,22 +50,30 @@ def notify():
     if (request.headers.get('webhook-key')
             == 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'):
         print('checking if game is over')
-        try:
-            with open(f'{home_path}data/{content["player_id"]}') as f:
-                game_id = f.read()
-            with open(f'{home_path}player_data/{game_id}.json') as f:
-                current_game = json.load(fp=f)
-        except FileNotFoundError:
-            cont = True
-        else:
-            cont = False
-            if current_game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
-                print('game is over and player did not send "wgb"')
-                send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
+        # try:
+        #     with open(f'{home_path}data/{content["player_id"]}') as f:
+        #         game_id = f.read()
+        #     with open(f'{home_path}player_data/{game_id}.json') as f:
+        #         current_game = json.load(fp=f)
+        # except FileNotFoundError:
+        #     cont = True
+        # else:
+        #     cont = False
+        #     if current_game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
+        #         print('game is over and player did not send "wgb"')
+        #         send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
+        #
+        #         return str(http.HTTPStatus.OK.value)
+        #     else:
+        #         cont = True
 
-                return str(http.HTTPStatus.OK.value)
-            else:
-                cont = True
+        game = dbmanager.get_latest_game_by_player_id(player_id=content['player_id'])
+        if game['status'] == 'done' or game['status'] == 'over':
+            cont = False
+            send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
+            return str(http.HTTPStatus.OK.value)
+        else:
+            cont = True
 
         if content['msg_body'].lower() == 'wgb' and cont:
             print('player sent "wgb"')
