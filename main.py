@@ -97,14 +97,6 @@ def notify():
             if not local:
                 send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
-            with open(f'{home_path}data/{content["player_id"]}') as f:
-                game_id = f.read()
-            with open(f'{home_path}player_data/{game_id}.json') as f:
-                current_game = json.load(fp=f)
-            got_right = False
-            status: str = current_game['status']
-            lives: int = current_game['lives']
-
             current_game = dbmanager.get_latest_game_by_player_id(player_id=content['player_id'])
             print(current_game)
             game_id = str(current_game['id'])
@@ -171,4 +163,4 @@ def bird_img(bird_name: str):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
