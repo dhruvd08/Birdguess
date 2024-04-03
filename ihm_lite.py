@@ -5,7 +5,7 @@ import shelve
 import PIL.Image
 from PIL import Image, ImageFont, ImageDraw
 
-home_path = ''
+home_path = '/home/shreedave/Birdguess/'
 
 
 class Img_data:
