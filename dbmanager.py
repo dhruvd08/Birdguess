@@ -89,7 +89,10 @@ def get_latest_game_by_player_id(player_id):
         games.append({'id': row[0], 'player_id': row[1], 'status': row[2], 'command': row[3],
                       'word_id': row[4], 'word': row[5], 'lives': row[6], 'current_letters': letters_to_array(row[7]),
                       'created_on': row[8], 'updated_on': row[9]})
-    return games[-1]
+    if len(games) == 0:
+        return None
+    else:
+        return games[-1]
 
 
 def get_game_by_command(command):

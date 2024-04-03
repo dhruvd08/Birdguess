@@ -68,12 +68,12 @@ def notify():
         #         cont = True
 
         game = dbmanager.get_latest_game_by_player_id(player_id=content['player_id'])
-        if game['status'] == 'done' or game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
-            cont = False
-            send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
-            return str(http.HTTPStatus.OK.value)
-        else:
-            cont = True
+        if game is not None:
+            if game['status'] == 'done' or game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
+                cont = False
+                send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
+                return str(http.HTTPStatus.OK.value)
+        cont = True
 
         if content['msg_body'].lower() == 'wgb' and cont:
             print('player sent "wgb"')
