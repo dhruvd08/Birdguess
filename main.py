@@ -97,6 +97,7 @@ def notify():
             if not local:
                 send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
+            got_right = False
             current_game = dbmanager.get_latest_game_by_player_id(player_id=content['player_id'])
             print(current_game)
             game_id = str(current_game['id'])
