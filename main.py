@@ -6,6 +6,9 @@ import requests
 from data import species
 from flask import Flask, request, send_file
 import ihm_lite
+from wgb import wgb
+
+home_path = '/home/shreedave/Birdguess/'
 
 app = Flask(__name__)
 alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -43,9 +46,9 @@ def notify():
             == 'fa64f9edd0351f4238d7cbfa5b8e1c12e148aa1629bdceefe639bee8b93a2d5d'):
         print('checking if game is over')
         try:
-            with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
+            with open(f'{home_path}data/{content["player_id"]}') as f:
                 game_id = f.read()
-            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
+            with open(f'{home_path}player_data/{game_id}.json') as f:
                 current_game = json.load(fp=f)
         except FileNotFoundError:
             cont = True
@@ -54,7 +57,7 @@ def notify():
             if current_game['status'] == 'over' and content['msg_body'].lower() != 'wgb':
                 print('game is over and player did not send "wgb"')
                 send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
-                with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
+                with open(f'{home_path}player_data/{game_id}.json', mode='w') as f:
                     new_game = {
                         'game_id': game_id,
                         'species': current_game['species'],
@@ -69,20 +72,22 @@ def notify():
 
         if content['msg_body'].lower() == 'wgb' and cont:
             print('player sent "wgb"')
-            location_vise_species = []
-            for sp in species.keys():
-                if content['player_country_code'] in species[sp]['countries']:
-                    location_vise_species.append(sp)
+            # location_vise_species = []
+            # for sp in species.keys():
+            #     if content['player_country_code'] in species[sp]['countries']:
+            #         location_vise_species.append(sp)
 
-            chosen_species: str = random.choice(location_vise_species)
-            print('decided species')
+            bird_id: int = random.randint(1, len(wgb))
+            print(bird_id)
+            chosen_species = wgb[bird_id - 1]
+            print(f'decided species is {chosen_species}')
             letters = ['_' if letter.lower() in alphabets else ' ' for letter in chosen_species]
             game_id = str(int(time.time()))
             ihm_lite.process(int(game_id), [letter if not letter == ' ' else '*' for letter in letters],
                              chances_remaining=6)
-            with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}', mode='w') as f:
+            with open(f'{home_path}data/{content["player_id"]}', mode='w') as f:
                 f.write(f'{game_id}')
-            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
+            with open(f'{home_path}player_data/{game_id}.json', mode='w') as f:
                 new_game = {
                     'game_id': game_id,
                     'species': [letter for letter in chosen_species],
@@ -95,9 +100,9 @@ def notify():
             # send('TEXT', ' '.join(letters), content['player_id'])
             send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game_id}', content['player_id'])
         elif content['msg_body'].lower() in [alphabet for alphabet in alphabets] and cont:
-            with open(f'/home/shreedave/Birdguess/data/{content["player_id"]}') as f:
+            with open(f'{home_path}data/{content["player_id"]}') as f:
                 game_id = f.read()
-            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json') as f:
+            with open(f'{home_path}player_data/{game_id}.json') as f:
                 current_game = json.load(fp=f)
             got_right = False
             status: str = current_game['status']
@@ -138,7 +143,7 @@ def notify():
             elif status == 'over':
                 send('TEXT', 'Send "wgb" to start a new game.', content['player_id'])
 
-            with open(f'/home/shreedave/Birdguess/player_data/{game_id}.json', mode='w') as f:
+            with open(f'{home_path}player_data/{game_id}.json', mode='w') as f:
                 new_game = {
                     'game_id': game_id,
                     'species': current_game['species'],
@@ -157,14 +162,14 @@ def notify():
 
 @app.route('/games/img/<game_id>')
 def game_img(game_id: str):
-    return send_file(f'/home/shreedave/Birdguess/output/{game_id}.png')
+    return send_file(f'{home_path}output/{game_id}.png')
 
 
 @app.route('/birds/img/<bird_name>')
 def bird_img(bird_name: str):
     print(bird_name)
-    return send_file(f'/home/shreedave/Birdguess/imgs/{bird_name}.png')
+    return send_file(f'{home_path}imgs/{bird_name}.png')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
