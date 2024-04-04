@@ -1,4 +1,4 @@
-wgb = [{'1': {'word': 'black winged kite', 'img': 'images/black-winged-kite.png'}},
+words = [{'1': {'word': 'black winged kite', 'img': 'images/black-winged-kite.png'}},
        {'2': {'word': 'coppersmith barbet', 'img': 'images/coppersmith-barbet.png'}},
        {'3': {'word': 'greater coucal', 'img': 'images/greater-coucal.png'}},
        {'4': {'word': 'malabar pied hornbill', 'img': 'images/malabar-pied-hornbill.png'}},

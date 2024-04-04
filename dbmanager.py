@@ -82,17 +82,13 @@ def get_game_by_player_id(player_id):
 
 def get_latest_game_by_player_id(player_id):
     session = engine.connect()
-    result = session.execute(text(f"select * from games where player_id={player_id}")).all()
+    result = session.execute(text(f"select * from games where "
+                                  f"player_id={player_id} order by id DESC limit 1")).first()
     session.close()
-    games = []
-    for row in result:
-        games.append({'id': row[0], 'player_id': row[1], 'status': row[2], 'command': row[3],
-                      'word_id': row[4], 'word': row[5], 'lives': row[6], 'current_letters': letters_to_array(row[7]),
-                      'created_on': row[8], 'updated_on': row[9]})
-    if len(games) == 0:
-        return None
+    if result is not None:
+        return to_game(result)
     else:
-        return games[-1]
+        return None
 
 
 def get_game_by_command(command):
