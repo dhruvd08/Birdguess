@@ -56,7 +56,7 @@ def process_input(user_input, game: GameDBO):
 
             if '_' not in game.current_letters:
                 got_right = True
-                send("TEXT", 'You got it right! Here\'s your bird card.', game.player_id)
+                send("TEXT", 'You got it right! Here\'s your card.', game.player_id)
                 send('IMAGE',
                      f'https://shreedave.pythonanywhere.com/species/img/'
                      f'{game.cmd}/'
