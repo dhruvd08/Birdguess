@@ -82,6 +82,7 @@ def process_input(user_input, game: GameDBO):
                              game.lives)
             if local:
                 print(f'IMAGE, https://shreedave.pythonanywhere.com/games/img/{game.id}, {game.player_id}')
+            else:
                 send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game.id}', game.player_id)
     else:
         send('TEXT', 'Enter a valid alphabet between a-z.', game.player_id)
