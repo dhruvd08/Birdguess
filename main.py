@@ -113,7 +113,7 @@ def notify():
             if local:
                 print(f'IMAGE, https://shreedave.pythonanywhere.com/games/img/{game.id}, {player_id}')
             else:
-                send('TEXT', 'Send an alphabet to fill the blanks.', player_id)
+                # send('TEXT', 'Send an alphabet to fill the blanks.', player_id)
                 send('IMAGE', f'https://shreedave.pythonanywhere.com/games/img/{game.id}', player_id)
 
 
