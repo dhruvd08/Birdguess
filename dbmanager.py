@@ -11,7 +11,7 @@ sqlalchemy_database_uri = "mysql://{username}:{password}@{hostname}/{databasenam
     hostname=os.environ['MYSQL_DB_HOST_ADDRESS'],
     databasename=os.environ['MYSQL_DB_NAME'],
 )
-engine = sqlalchemy.create_engine(sqlalchemy_database_uri)
+engine = sqlalchemy.create_engine(sqlalchemy_database_uri, pool_recycle=280)
 
 
 def letters_to_array(c_letters: str):
