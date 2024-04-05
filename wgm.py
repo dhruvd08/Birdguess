@@ -1,2 +1,16 @@
-words = [{'1': {'word': 'nilgiri tahr', 'img': 'images/black-winged-kite.png'}},
-]
+words = [{'1': {'word': 'nilgiri tahr'}},
+         {'2': {'word': 'bonnet macaque'}},
+         {'3': {'word': 'common langur'}},
+         {'4': {'word': 'common palm civet'}},
+         {'5': {'word': 'indian grey mongoose'}},
+         {'6': {'word': 'jungle cat'}},
+         {'7': {'word': 'leopard cat'}},
+         {'8': {'word': 'leopard'}},
+         {'9': {'word': 'lion tailed macaque'}},
+         {'10': {'word': 'nilgiri langur'}},
+         {'11': {'word': 'rhesus macaque'}},
+         {'12': {'word': 'rusty spotted cat'}},
+         {'13': {'word': 'slender loris'}},
+         {'14': {'word': 'small indian civet'}},
+         {'15': {'word': 'tiger'}},
+         ]
