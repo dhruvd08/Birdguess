@@ -54,7 +54,7 @@ def process(id_: int, word: list, chances_remaining: int) -> str:
     # im = Image.new('RGBA', (1024, 1024), palette.bg_color)
     with Image.open(palette.bg_img).convert('RGBA') as im:
         font = ImageFont.load_default(100)
-        x_loc = 60
+        x_loc = 70
         y_loc = 250
         for letter in word:
             txt = Image.new('RGBA', im.size, (0, 0, 0, 0))
